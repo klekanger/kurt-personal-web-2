@@ -1,10 +1,11 @@
 {
-  "name": "kurts-portfolio",
+  "name": "lekanger-no-studio",
   "private": true,
   "version": "1.0.0",
   "main": "package.json",
   "license": "UNLICENSED",
   "scripts": {
+    "dev": "sanity start",
     "start": "sanity start",
     "build": "sanity build"
   },

@@ -5,7 +5,7 @@ import {codeInput} from '@sanity/code-input'
 
 export default createConfig({
   name: 'default',
-  title: 'Kurts portfolio',
+  title: 'Lekanger.no - Studio',
 
   projectId: 'ajget05d',
   dataset: 'development',
