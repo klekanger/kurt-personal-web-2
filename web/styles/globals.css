@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --scale-min: 102%;
+  --scale-normal: 110%;
+}
+
+html {
+  font-size: 100%;
+  overflow-x: hidden;
+
+  @apply leading-relaxed;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+address {
+  font-style: normal;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.link-underline {
+  @apply from-brand-secondary2/50 bg-gradient-to-l to-white pb-1;
+  border-bottom-width: 0;
+  background-size: 0 1px;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.2s ease-in-out;
+}
+
+.link-underline:hover {
+  background-size: 100% 1px;
+  background-position: 0% 100%;
+}
+
+.navbar {
+  @apply w-full;
+}
+.navbar-scrolled {
+  @apply mt-0 pb-0 shadow-md backdrop-blur-md transition-all duration-200 ease-linear;
+}
+
+.navbar-scrolled .logo {
+  @apply w-4/12 transition-all duration-200 ease-linear md:w-3/12 lg:w-2/12;
+}
+
+.navbar-scrolled .nav-items {
+  @apply md:text-base;
+}
+
+.navbar-scrolled .hamburger {
+  @apply text-3xl;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-title;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: 'Tenor Sans', sans-serif;
+    @apply mt-4 font-normal leading-snug sm:mt-8;
+  }
+
+  h1 {
+    @apply text-4xl sm:text-5xl;
+  }
+
+  h2 {
+    @apply text-3xl sm:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl sm:text-3xl;
+  }
+
+  h4 {
+    @apply text-xl sm:text-2xl;
+  }
+
+  h5 {
+    @apply text-lg sm:text-xl;
+  }
+
+  p {
+    @apply mb-4 leading-relaxed;
+  }
+
+  body {
+    @apply font-body text-brand-black bg-brand-white dark:bg-brand-dark-background dark:text-brand-dark-white text-sm font-normal leading-relaxed sm:text-base;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  p a {
+    @apply decoration-brand-main2/30 underline decoration-1 underline-offset-2;
+  }
+
+  /* Push headline down a bit on the page when linking to anchors */
+  .anchor {
+    padding-top: 70px;
+    margin-top: -70px;
+    position: relative;
+    z-index: -1;
+    display: inline-block; /* required for webkit browsers */
+  }
+}
+
+@layer components {
+  .highlight-white-30 {
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 30%) !important;
+  }
+  .highlight-white-10 {
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 10%) !important;
+  }
+  .highlight-white-5 {
+    box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 5%) !important;
+  }
+
+  .btn {
+    @apply dark:text-brand-dark-black rounded-md border border-transparent px-8 py-3 text-base font-medium shadow-lg transition duration-500 ease-in-out sm:mt-0 md:py-4 md:px-10 md:text-lg;
+  }
+
+  .btn-primary {
+    @apply shadow-brand-main1-70 dark:highlight-white-10 text-brand-white  bg-brand-main1 dark:bg-brand-dark-main1 dark:hover:bg-brand-dark-main1-70 hover:bg-brand-main1-70 hover:shadow-brand-main1-70;
+  }
+
+  .btn-secondary {
+    @apply shadow-brand-main2-70 dark:highlight-white-5 text-brand-white bg-brand-main2 dark:bg-brand-dark-main2 dark:hover:bg-brand-dark-main2-70 hover:bg-brand-main2-70 hover:shadow-brand-main2-70;
+  }
+
+  .read-more {
+    @apply text-brand-secondary2 dark:text-brand-dark-white dark:bg-brand-secondary2-70 text-inherit no-underline dark:rounded-sm dark:px-1;
+  }
+}
