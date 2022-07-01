@@ -1319,6 +1319,18 @@
   "resolved" "https://registry.npmjs.org/@sanity/color/-/color-2.1.11.tgz"
   "version" "2.1.11"
 
+"@sanity/dashboard@^3.0.0-v3-studio.0":
+  "integrity" "sha512-8KdBNCL3ejXO7PfvK9lLWPeUbMZxoBgBSzsb9zV0YfUEghb98TvKCh6nJV05ppSP317izNaw5QSmCwJjhLIXOQ=="
+  "resolved" "https://registry.npmjs.org/@sanity/dashboard/-/dashboard-3.0.0-v3-studio.0.tgz"
+  "version" "3.0.0-v3-studio.0"
+  dependencies:
+    "@sanity/icons" "^1.2.8"
+    "@sanity/image-url" "^1.0.1"
+    "@sanity/incompatible-plugin" "^0.0.1-studio-v3.1"
+    "@sanity/ui" "^0.37.9"
+    "lodash" "^4.17.21"
+    "rxjs" "^6.5.3"
+
 "@sanity/diff@3.0.0-dev-preview.9":
   "integrity" "sha512-qx43mQGLwJiIWDpLdYKv5Ou/yna+E9amzjyo2A1j2zSZzd0e2tGPVu3E/bTsk4lrKvSnSuGwZBRyzG3s829zKw=="
   "resolved" "https://registry.npmjs.org/@sanity/diff/-/diff-3.0.0-dev-preview.9.tgz"

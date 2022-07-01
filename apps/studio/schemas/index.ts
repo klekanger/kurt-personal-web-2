@@ -11,12 +11,13 @@ import figure from './objects/figure'
 import person from './objects/person'
 import projectPortableText from './objects/projectPortableText'
 import simplePortableText from './objects/simplePortableText'
-import code from './objects/code'
+import menuElements from './menuElements'
+// import code from './objects/code'
 
 export const schemaTypes = [
   bioPortableText,
   figure,
-  code,
+  // code,
   projectPortableText,
   simplePortableText,
   project,
@@ -28,4 +29,5 @@ export const schemaTypes = [
   webContent,
   webContentTextBox,
   webFrontpageContent,
+  menuElements,
 ]

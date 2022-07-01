@@ -1,16 +1,30 @@
 import {createConfig} from 'sanity'
+import {
+  dashboardTool,
+  projectInfoWidget,
+  projectUsersWidget,
+  sanityTutorialsWidget,
+} from '@sanity/dashboard'
 import {deskTool} from 'sanity/desk'
 import {schemaTypes} from './schemas'
 import {codeInput} from '@sanity/code-input'
 
+const DATASET = 'development'
+
 export default createConfig({
   name: 'default',
-  title: 'Lekanger.no - Studio',
+  title: `Lekanger.no [dataset: ${DATASET}]`,
 
   projectId: 'ajget05d',
-  dataset: 'development',
+  dataset: DATASET,
 
-  plugins: [deskTool(), codeInput()],
+  plugins: [
+    deskTool(),
+    codeInput(),
+    dashboardTool({
+      widgets: [sanityTutorialsWidget(), projectInfoWidget(), projectUsersWidget()],
+    }),
+  ],
 
   schema: {
     types: schemaTypes,

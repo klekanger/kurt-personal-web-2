@@ -14,6 +14,7 @@ import {
   getCustomerStoryText,
   getFeatureText,
   getHeroText,
+  getMenuItems,
 } from '../lib/api';
 import { HomePageProps } from '../types/interfaces';
 
@@ -74,7 +75,13 @@ export async function getStaticProps({ preview = false }) {
   const customerStoryText = await getCustomerStoryText();
 
   return {
-    props: { allPosts, heroText, aboutMeText, featureText, customerStoryText },
+    props: {
+      allPosts,
+      heroText,
+      aboutMeText,
+      featureText,
+      customerStoryText,
+    },
     revalidate: 1,
   };
 }

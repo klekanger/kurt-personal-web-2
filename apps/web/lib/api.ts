@@ -33,6 +33,14 @@ export async function getNumberOfPosts() {
   return data;
 }
 
+// Get menu elements (name and urls)
+export async function getMenuItems() {
+  const data = await client.fetch(
+    groq`*[_type == 'menuElement'] {title, urlField, _id}`
+  );
+  return data;
+}
+
 export async function getPreviewPostBySlug(slug: string) {
   const data = await getClient(true).fetch(
     groq`*[_type == "project" && slug.current == $slug] | order(_createdAt desc){

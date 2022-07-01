@@ -5,7 +5,6 @@ import { useRouter } from 'next/router';
 import Meta from '../../components/meta';
 import Container from '../../components/UI/container';
 import Layout from '../../components/UI/layout';
-import Navbar from '../../components/UI/navbar';
 import PostArticle from '../../components/UI/post-article';
 import PostTitle from '../../components/UI/post-title';
 import {

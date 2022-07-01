@@ -52,6 +52,13 @@ export interface AboutMe {
   keywords?: string[];
 }
 
+// Navbar menu
+export interface Menu {
+  title: string;
+  link: string;
+  _id: string;
+}
+
 // Home page data
 export interface HomePageProps {
   allPosts: {
