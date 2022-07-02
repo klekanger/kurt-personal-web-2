@@ -153,4 +153,16 @@ input[type='number']::-webkit-outer-spin-button {
   .read-more {
     @apply text-brand-secondary2 dark:text-brand-dark-white dark:bg-brand-secondary2-70 text-inherit no-underline dark:rounded-sm dark:px-1;
   }
+
+  .firefox-backdrop-blur {
+    @apply bg-white/80 dark:bg-black/80;
+
+  }
+  
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .firefox-backdrop-blur {
+    @apply bg-transparent;
+    }
+  }
+
 }

@@ -7,7 +7,7 @@ export default function SearchResultsBox({ searchResults }: any) {
 
   return (
     <>
-      <div className='absolute right-0 top-12 bottom-0 left-0 z-10 py-12 backdrop-blur-3xl transition duration-150 ease-in-out md:top-32'>
+      <div className='firefox-backdrop-blur absolute right-0 top-12 bottom-0 left-0 z-10 py-12 backdrop-blur-3xl transition duration-150 ease-in-out md:top-32'>
         <div className='relative mx-auto w-11/12 rounded border border-gray-400 bg-white py-8 px-2 shadow-md dark:border-gray-700 dark:bg-gray-800 md:px-8 xl:w-1/2'>
           <h1 className='mb-4 text-left text-brand-main2 dark:text-brand-dark-main2'>
             Søkeresultater
