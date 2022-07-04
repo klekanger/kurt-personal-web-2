@@ -67,10 +67,7 @@ const Services: NextPage<ServicesProps> = ({
             )}
           </article>
         </Container>
-        <aside
-          data-gsap='reveal-bottom'
-          className='bg-gray-100 dark:bg-brand-dark-main1-10'
-        >
+        <aside className='bg-gray-100 dark:bg-brand-dark-main1-10'>
           <CustomerStory content={customerStoryText} />
         </aside>
       </Layout>

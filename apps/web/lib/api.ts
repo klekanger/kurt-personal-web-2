@@ -136,7 +136,7 @@ export async function getFeatureText() {
 // Fetch text for the Hero section
 export async function getHeroText() {
   const data = await client.fetch(
-    groq`*[_type == "webFrontpageContent" && webFrontPageIdentifier =='hero-modul' ]`
+    groq`*[_type == "webFrontpageContent" && webFrontPageIdentifier =='hero-personal' ]`
   );
 
   return data[0];

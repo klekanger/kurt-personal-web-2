@@ -1,5 +1,7 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import Meta from '../components/meta';
 import AboutMe from '../components/UI/about-me';
 import ContactMe from '../components/UI/contact-me';
@@ -14,7 +16,6 @@ import {
   getCustomerStoryText,
   getFeatureText,
   getHeroText,
-  getMenuItems,
 } from '../lib/api';
 import { HomePageProps } from '../types/interfaces';
 
@@ -26,10 +27,27 @@ const Home: NextPage<HomePageProps> = ({
   customerStoryText,
   preview,
 }: HomePageProps) => {
-  const [mounted, setMounted] = useState(false);
+  gsap.registerPlugin(ScrollTrigger);
+  const revealRefs = useRef([] as HTMLDivElement[]);
+  revealRefs.current = [];
+
+  const addToRefs = (el: HTMLDivElement) => {
+    revealRefs.current.push(el);
+  };
 
   useEffect(() => {
-    setMounted(true);
+    revealRefs.current.forEach((el, i) => {
+      gsap.from(el, {
+        y: 100,
+        scrollTrigger: {
+          id: `section-${i + 1}`,
+          trigger: el,
+          start: 'top bottom',
+          end: 'bottom bottom',
+          scrub: 1,
+        },
+      });
+    });
   }, []);
 
   return (
@@ -39,17 +57,16 @@ const Home: NextPage<HomePageProps> = ({
       <>
         <Layout preview={false}>
           <Hero content={heroText} />
-
-          <div data-gsap='reveal-bottom'>
+          <div className='scroll-reveal' ref={addToRefs}>
             <Feature content={featureText} />
           </div>
-          <div data-gsap='reveal-bottom'>
+          <div className='scroll-reveal' ref={addToRefs}>
             <AboutMe content={aboutMeText} />
           </div>
-          <div data-gsap='reveal-bottom'>
+          <div className='scroll-reveal' ref={addToRefs}>
             <CustomerStory content={customerStoryText} />
           </div>
-          <div data-gsap='reveal-bottom'>
+          <div className='scroll-reveal' ref={addToRefs}>
             <ContactMe />
           </div>
 

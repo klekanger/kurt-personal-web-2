@@ -60,7 +60,7 @@ const Contact: NextPage<ContactProps> = ({
             )}
           </article>
         </Container>
-        <div data-gsap='reveal-bottom' className='pt-8'>
+        <div className='pt-8'>
           <Feature
             content={featureText}
             alternativeHeading='Les mer om <mark>mine tjenester</mark>'
