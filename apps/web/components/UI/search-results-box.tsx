@@ -4,6 +4,7 @@ import useScrollLock from '../../hooks/useScrollLock';
 
 export default function SearchResultsBox({ searchResults }: any) {
   useScrollLock();
+  console.log('[SearchResultsBox] searchResults: ', searchResults);
 
   return (
     <>
@@ -14,23 +15,13 @@ export default function SearchResultsBox({ searchResults }: any) {
           </h1>
           <div className='max-h-[22rem] overflow-y-auto md:max-h-full '>
             {searchResults.map((result: any) => (
-              <Link href={`${result?.href}`} passHref key={result._id}>
+              <Link
+                href={`/blog/${result.slug.current}`}
+                passHref
+                key={result._id}
+              >
                 <a className='md:text-md block transform transition duration-100 hover:text-brand-main2 hover:dark:text-brand-dark-main2 sm:text-base'>
-                  {result.webContentType === 'blogpost' ? (
-                    <>
-                      <MdArticle className='mr-2 inline' />{' '}
-                      {result.title
-                        .replace(/<mark>/g, '')
-                        .replace(/<\/mark>/g, '')}
-                    </>
-                  ) : (
-                    <>
-                      <MdContactPage className='mr-2 inline' />{' '}
-                      {result.title
-                        .replace(/<mark>/g, '')
-                        .replace(/<\/mark>/g, '')}
-                    </>
-                  )}
+                  <MdArticle className='mr-2 inline' /> {result.title}
                 </a>
               </Link>
             ))}

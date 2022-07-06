@@ -23,7 +23,7 @@ export default async function handler(
 
   try {
     const data = await client.fetch(
-      groq`*[_type == "project" || _type == "webContent" ]  | score(pt::text(body) match "${query}") 
+      groq`*[_type == "project" ]  | score(pt::text(body) match "${query}") 
           | order(_score desc) [_score > 0][0..19]  
             {_score, _id, title, slug, webContentType}`
     );

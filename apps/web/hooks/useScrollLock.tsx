@@ -5,8 +5,6 @@ const useScrollLock = () => {
     const originalStyle = window.getComputedStyle(document.body).overflow;
     const scrollBarWidth = window.innerWidth - document.body.clientWidth;
 
-    console.log('scrollBarWidth', scrollBarWidth);
-
     document.body.setAttribute(
       'style',
       `overflow: hidden; position:fixed; padding-right: ${scrollBarWidth}px; right:0; left:0;`

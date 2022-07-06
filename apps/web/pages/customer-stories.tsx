@@ -4,39 +4,10 @@ import { useRouter } from 'next/router';
 import Meta from '../components/meta';
 import Container from '../components/UI/container';
 import Layout from '../components/UI/layout';
-import Navbar from '../components/UI/navbar';
 import PostArticle from '../components/UI/post-article';
 import PostTitle from '../components/UI/post-title';
 import { getCustomerStoriesText } from '../lib/api';
-
-interface CustomerStoriesProps {
-  customerStoriesText: {
-    title: string;
-    body: Object[];
-    mainImage: {
-      alt: string;
-      asset: {
-        _ref: string;
-        _type: string;
-      };
-      caption: string;
-      _type: string;
-    };
-    webContentType: string;
-    preview: boolean;
-  };
-  customerStoryText: {
-    title: string;
-    images: {
-      alt?: string;
-      asset: object;
-      caption?: string;
-    }[];
-    textBlocks: string[];
-    webFrontPageIdentifier: string;
-  };
-  preview: boolean;
-}
+import { CustomerStoriesProps } from '../types/interfaces';
 
 const CustomerStories: NextPage<CustomerStoriesProps> = ({
   customerStoriesText,

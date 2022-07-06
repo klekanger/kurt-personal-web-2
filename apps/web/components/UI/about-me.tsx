@@ -28,9 +28,9 @@ export default function AboutMe({ content }: AboutMeProps) {
     '#';
 
   return (
-    <div className='relative mt-16 overflow-hidden bg-brand-main1-10 pb-8 dark:bg-brand-dark-main1-10 sm:pb-0'>
+    <div className='default-spacing relative overflow-hidden bg-brand-main1-10 pb-8 dark:bg-brand-dark-main1-10 md:pb-16'>
       <Container>
-        <article className='mb-16'>
+        <article>
           <section className='pt-8 md:pt-16'>
             <div className='px-2 pb-4 md:pb-8'>
               <HeadingWithMarks heading={headingToRender} />

@@ -82,7 +82,7 @@ export async function getAllKeywords() {
 // Fetch text for About me front page module
 export async function getAboutMeText() {
   const data = await client.fetch(
-    groq`*[_type == "webFrontpageContent" && webFrontPageIdentifier =='om-meg-modul' ]`
+    groq`*[_type == "webFrontpageContent" && webFrontPageIdentifier =='om-meg-personlig' ]`
   );
 
   return data[0];
@@ -118,7 +118,7 @@ export async function getCustomerStoriesText() {
 // Fetch text for customer story front page module
 export async function getCustomerStoryText() {
   const data = await client.fetch(
-    groq`*[_type == "webFrontpageContent" && webFrontPageIdentifier =='kundereferanse' ]`
+    groq`*[_type == "webFrontpageContent" && webFrontPageIdentifier =='utvalgt-prosjekt' ]`
   );
 
   return data[0];
@@ -152,9 +152,9 @@ export async function getPrivacyText() {
 }
 
 // Fetch text for "Tjenester" sub page
-export async function getServicesText() {
+export async function getProjectsText() {
   const data = await client.fetch(
-    groq`*[_type == "webContent" && webContentType == 'service']`
+    groq`*[_type == "webContent" && webContentType == 'project']`
   );
 
   return data[0];

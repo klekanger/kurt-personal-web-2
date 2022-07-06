@@ -61,21 +61,7 @@ export interface Menu {
 
 // Home page data
 export interface HomePageProps {
-  allPosts: {
-    _id: string;
-    categories: object[];
-    title: string;
-    excerpt: object[];
-    mainImage: {
-      alt: string;
-      asset: object;
-    };
-    slug: {
-      current: string;
-      title: string;
-      _id: string;
-    };
-  }[];
+  allPosts: Post[];
   heroText: {
     title: string;
     textBlocks: string[];
@@ -113,5 +99,96 @@ export interface HomePageProps {
     }[];
   };
 
+  preview: boolean;
+}
+
+export interface PrivacyPageProps {
+  privacyText: {
+    title: string;
+    body: Object[];
+    mainImage: {
+      alt: string;
+      asset: {
+        _ref: string;
+        _type: string;
+      };
+      caption: string;
+      _type: string;
+    };
+    webContentType: string;
+    preview: boolean;
+  };
+  allPosts: Post[];
+  preview: boolean;
+}
+
+export interface ContactProps {
+  contactText: {
+    title: string;
+    body: Object[];
+    mainImage: {
+      alt: string;
+      asset: {
+        _ref: string;
+        _type: string;
+      };
+      caption: string;
+      _type: string;
+    };
+    preview: boolean;
+  };
+  featureText: {
+    title: string;
+    textBlocks: string[];
+  };
+  preview: boolean;
+}
+
+export interface CustomerStoriesProps {
+  customerStoriesText: {
+    title: string;
+    body: Object[];
+    mainImage: {
+      alt: string;
+      asset: {
+        _ref: string;
+        _type: string;
+      };
+      caption: string;
+      _type: string;
+    };
+    webContentType: string;
+    preview: boolean;
+  };
+  customerStoryText: {
+    title: string;
+    images: {
+      alt?: string;
+      asset: object;
+      caption?: string;
+    }[];
+    textBlocks: string[];
+    webFrontPageIdentifier: string;
+  };
+  preview: boolean;
+}
+
+export interface ProjectsProps {
+  projectsText: {
+    title: string;
+    body: Object[];
+    mainImage: {
+      alt: string;
+      asset: {
+        _ref: string;
+        _type: string;
+      };
+      caption: string;
+      _type: string;
+    };
+    webContentType: string;
+    preview: boolean;
+  };
+  allPosts: Post[];
   preview: boolean;
 }

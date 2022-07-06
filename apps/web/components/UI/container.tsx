@@ -1,6 +1,7 @@
 interface ContainerProps {
   children?: React.ReactNode;
   noPadding?: boolean;
+  className?: string;
 }
 
 export default function Container({

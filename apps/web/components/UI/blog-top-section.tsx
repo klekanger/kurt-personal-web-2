@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { imageBuilder } from '../../lib/sanity';
 import { Post } from '../../types/interfaces';
+import { BLURDATA } from '../../lib/blurdata';
+
 //import {Suspense} from 'react';
 
 interface BlogTopSectionProps {
@@ -36,6 +38,8 @@ export default function BlogTopSection({ posts }: BlogTopSectionProps) {
                   }
                   alt={firstPost?.mainImage?.alt}
                   priority={true}
+                  placeholder='blur'
+                  blurDataURL={BLURDATA}
                 />
               </div>
             </Link>
@@ -74,6 +78,8 @@ export default function BlogTopSection({ posts }: BlogTopSectionProps) {
                   }
                   alt={secondPost?.mainImage?.alt}
                   priority={true}
+                  placeholder='blur'
+                  blurDataURL={BLURDATA}
                 />
               </div>
             </Link>
@@ -111,6 +117,8 @@ export default function BlogTopSection({ posts }: BlogTopSectionProps) {
                   }
                   alt={thirdPost?.mainImage?.alt}
                   priority={true}
+                  placeholder='blur'
+                  blurDataURL={BLURDATA}
                 />
               </div>
             </Link>

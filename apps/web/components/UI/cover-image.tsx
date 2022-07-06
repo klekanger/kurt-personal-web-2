@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { BLURDATA } from '../../lib/blurdata';
 import { imageBuilder } from '../../lib/sanity';
 
 interface CoverImageProps {
@@ -25,6 +26,8 @@ export default function CoverImage({ mainImage }: CoverImageProps) {
         layout='fill'
         src={imageToDisplay}
         alt={mainImage?.alt}
+        placeholder='blur'
+        blurDataURL={BLURDATA}
       />
     </div>
   );

@@ -42,6 +42,7 @@ export default {
       options: {
         list: [
           {title: 'Tjeneste', value: 'service'},
+          {title: 'Prosjekt', value: 'project'},
           {title: 'Kundereferanse', value: 'customer-reference'},
           {title: 'Om meg', value: 'about-me'},
           {title: 'Kontakt meg', value: 'contact-me'},

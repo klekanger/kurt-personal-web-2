@@ -18,20 +18,10 @@ import SearchResultsBox from './search-results-box';
 
 // Navbar menu items
 const navigation = [
-  { name: 'Tjenester', href: '/services' },
+  { name: 'Prosjekter', href: '/projects' },
   { name: 'Om meg', href: '/about-me' },
   { name: 'Blogg', href: '/blogposts/1' },
-  { name: 'Kontakt', href: '/contact' },
 ];
-
-// Mappings between pages and webContentType
-// Necessary for searching through both articles and pages
-const webContentTypeMappings: { [key: string]: string } = {
-  service: '/services',
-  'about-me': '/about-me',
-  blog: '/blog',
-  'contact-me': '/contact',
-};
 
 export default function Navbar() {
   const [mounted, setMounted] = useState(false);
@@ -68,6 +58,14 @@ export default function Navbar() {
 
   // Handle search request and call API
   const handleSearch = async () => {
+    if (searchInput.searchValue.length < 1) {
+      setSearchInput({
+        ...searchInput,
+        showSearch: false,
+      });
+      return;
+    }
+
     setLoadingSearchResults(true);
     try {
       const api = fetch(`/api/searchContent?q=${searchInput.searchValue}`);
@@ -79,23 +77,7 @@ export default function Navbar() {
           showSearch: false,
         });
 
-        const results = data.result.map((result: any) => {
-          if (result?.slug?.current !== undefined) {
-            return {
-              _id: result._id,
-              title: result.title,
-              href: `/blog/${result.slug.current}`,
-              webContentType: 'blogpost',
-            };
-          } else {
-            return {
-              _id: result._id,
-              title: result.title,
-              href: `${webContentTypeMappings[result.webContentType]}`,
-              webContentType: result?.webContentType,
-            };
-          }
-        });
+        const results = data.result || [];
 
         setSearchResults(results);
         setLoadingSearchResults(false);
@@ -136,7 +118,7 @@ export default function Navbar() {
             : 'dark:bg-brand-dark-background'
         } top-0 z-20 bg-white/80 pt-2 backdrop-blur-md`}
       >
-        <div className='mx-auto flex flex-row items-center justify-between px-4 md:items-end md:px-7 lg:container'>
+        <div className='mx-auto flex flex-row items-center justify-between px-4 md:items-center md:px-7 lg:container'>
           <Link href='/' passHref>
             <a className='logo w-1/2 md:w-4/12 lg:w-3/12'>
               <Image
@@ -155,7 +137,7 @@ export default function Navbar() {
             )}
           </div>
           <nav className='hidden sm:ml-6 md:block'>
-            <div className='nav-items mt-4 flex space-x-6 pb-1 align-bottom text-sm font-semibold sm:text-base md:mt-0 md:self-end lg:text-lg'>
+            <div className='nav-items mt-4 flex space-x-6 pb-1 align-bottom text-sm  sm:text-base md:mt-0 md:self-end lg:text-lg'>
               {navigation.map((item) => (
                 <Link passHref href={item.href} key={item.name}>
                   <a className='link-underline dark:text-brandDark-white transform transition  duration-500 hover:text-brand-main2 dark:hover:text-gray-400'>
@@ -292,10 +274,3 @@ export default function Navbar() {
     </>
   );
 }
-
-// TODO
-// Search should timeout after a certain amount of time
-// Show results box straight away if search is done - with spinner inside
-// Show "not found" if no results
-// Fix max height on search box on smaller screens
-// ...

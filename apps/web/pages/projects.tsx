@@ -3,45 +3,16 @@ import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import Meta from '../components/meta';
 import Container from '../components/UI/container';
-import CustomerStory from '../components/UI/customer-story';
+import FeaturedBlogPosts from '../components/UI/featured-blog-posts';
 import Layout from '../components/UI/layout';
-import Navbar from '../components/UI/navbar';
 import PostArticle from '../components/UI/post-article';
 import PostTitle from '../components/UI/post-title';
-import { getCustomerStoryText, getServicesText } from '../lib/api';
+import { getAllPostsForHome, getProjectsText } from '../lib/api';
+import { ProjectsProps } from '../types/interfaces';
 
-interface ServicesProps {
-  servicesText: {
-    title: string;
-    body: Object[];
-    mainImage: {
-      alt: string;
-      asset: {
-        _ref: string;
-        _type: string;
-      };
-      caption: string;
-      _type: string;
-    };
-    webContentType: string;
-    preview: boolean;
-  };
-  customerStoryText: {
-    title: string;
-    images: {
-      alt?: string;
-      asset: object;
-      caption?: string;
-    }[];
-    textBlocks: string[];
-    webFrontPageIdentifier: string;
-  };
-  preview: boolean;
-}
-
-const Services: NextPage<ServicesProps> = ({
-  servicesText,
-  customerStoryText,
+const Projects: NextPage<ProjectsProps> = ({
+  projectsText: servicesText,
+  allPosts,
   preview,
 }) => {
   const router = useRouter();
@@ -67,22 +38,26 @@ const Services: NextPage<ServicesProps> = ({
             )}
           </article>
         </Container>
-        <aside className='bg-gray-100 dark:bg-brand-dark-main1-10'>
-          <CustomerStory content={customerStoryText} />
+        <aside className='mt-8 bg-gray-100 pb-8 dark:bg-brand-dark-main1-10 md:mt-24'>
+          <FeaturedBlogPosts content={allPosts} />
         </aside>
       </Layout>
     </>
   );
 };
 
-export default Services;
+export default Projects;
 
 export async function getStaticProps({ preview = false }) {
-  const servicesText = await getServicesText();
-  const customerStoryText = await getCustomerStoryText();
+  const projectsText = await getProjectsText();
+  const allPosts = await getAllPostsForHome({
+    preview,
+    numberOfPosts: 4,
+    offset: 0,
+  });
 
   return {
-    props: { servicesText, customerStoryText, preview },
+    props: { projectsText, allPosts, preview },
     revalidate: 1,
   };
 }

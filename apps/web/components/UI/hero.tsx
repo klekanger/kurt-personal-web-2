@@ -4,6 +4,8 @@ import kurtPortrait from '../../public/kurt-kvadratisk-transparent.png';
 import HeadingWithMarks from '../content-renderers/heading-with-marks';
 import Container from './container';
 import SimpleText from '../content-renderers/simple-text';
+import gsap from 'gsap';
+import { useEffect, useRef } from 'react';
 
 interface HeroProps {
   content: {
@@ -23,7 +25,7 @@ export default function Hero({ content }: HeroProps) {
   return (
     <article className='bg-brand-main1-10 dark:bg-brand-dark-main1-10'>
       <Container>
-        <div className='my-0 flex justify-between sm:my-8 md:my-16'>
+        <div className='default-spacing flex justify-between'>
           <section className='w-full px-2 pt-8 pb-16 md:w-7/12 md:pt-16 lg:pt-32'>
             <div className='pb-4 md:pb-8'>
               <HeadingWithMarks heading={headingToRender} />
@@ -31,12 +33,12 @@ export default function Hero({ content }: HeroProps) {
             <SimpleText text={content?.textBlocks[0]} />
 
             <div className='flex justify-around space-x-4 py-8 sm:px-32 md:justify-start md:px-0'>
-              <Link href='/services'>
-                <a className='btn btn-primary'>Les mer</a>
+              <Link href='/about-me'>
+                <a className='btn btn-primary'>Om meg</a>
               </Link>
 
-              <Link href='/contact'>
-                <a className='btn btn-secondary'>Kontakt meg</a>
+              <Link href='/projects'>
+                <a className='btn btn-secondary'>Utvalgte prosjekter</a>
               </Link>
             </div>
           </section>
@@ -47,6 +49,8 @@ export default function Hero({ content }: HeroProps) {
               layout='fill'
               alt='Kurt Lekanger'
               priority={true}
+              placeholder='blur'
+              className='rounded-b-md'
             />
           </div>
         </div>

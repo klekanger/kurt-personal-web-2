@@ -3,49 +3,16 @@ import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import Meta from '../components/meta';
 import Container from '../components/UI/container';
-import Feature from '../components/UI/feature';
+import FeaturedBlogPosts from '../components/UI/featured-blog-posts';
 import Layout from '../components/UI/layout';
-import Navbar from '../components/UI/navbar';
 import PostArticle from '../components/UI/post-article';
 import PostTitle from '../components/UI/post-title';
-import { getFeatureText, getPrivacyText } from '../lib/api';
-
-interface PrivacyPageProps {
-  privacyText: {
-    title: string;
-    body: Object[];
-    mainImage: {
-      alt: string;
-      asset: {
-        _ref: string;
-        _type: string;
-      };
-      caption: string;
-      _type: string;
-    };
-    webContentType: string;
-    preview: boolean;
-  };
-  customerStoryText: {
-    title: string;
-    images: {
-      alt?: string;
-      asset: object;
-      caption?: string;
-    }[];
-    textBlocks: string[];
-    webFrontPageIdentifier: string;
-  };
-  featureText: {
-    title: string;
-    textBlocks: string[];
-  };
-  preview: boolean;
-}
+import { getFeatureText, getPrivacyText, getAllPostsForHome } from '../lib/api';
+import { PrivacyPageProps } from '../types/interfaces';
 
 const PrivacyPage: NextPage<PrivacyPageProps> = ({
   privacyText,
-  featureText,
+  allPosts,
   preview,
 }) => {
   const router = useRouter();
@@ -71,12 +38,9 @@ const PrivacyPage: NextPage<PrivacyPageProps> = ({
             )}
           </article>
         </Container>
-        <div className='pt-8'>
-          <Feature
-            content={featureText}
-            alternativeHeading='Les mer om <mark>mine tjenester</mark>'
-          />
-        </div>
+        <aside className='mt-8 bg-gray-100 pb-8 dark:bg-brand-dark-main1-10 md:mt-24'>
+          <FeaturedBlogPosts content={allPosts} />
+        </aside>
       </Layout>
     </>
   );
@@ -86,10 +50,14 @@ export default PrivacyPage;
 
 export async function getStaticProps({ preview = false }) {
   const privacyText = await getPrivacyText();
-  const featureText = await getFeatureText();
+  const allPosts = await getAllPostsForHome({
+    preview,
+    numberOfPosts: 4,
+    offset: 0,
+  });
 
   return {
-    props: { privacyText, featureText, preview },
+    props: { privacyText, allPosts, preview },
     revalidate: 1,
   };
 }
