@@ -1,10 +1,9 @@
 import Link from 'next/link';
-import { MdArticle, MdContactPage } from 'react-icons/md';
+import { MdArticle } from 'react-icons/md';
 import useScrollLock from '../../hooks/useScrollLock';
 
 export default function SearchResultsBox({ searchResults }: any) {
   useScrollLock();
-  console.log('[SearchResultsBox] searchResults: ', searchResults);
 
   return (
     <>
