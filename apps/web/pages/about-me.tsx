@@ -7,17 +7,7 @@ import Layout from '../components/UI/layout';
 import PostArticle from '../components/UI/post-article';
 import PostTitle from '../components/UI/post-title';
 import { getAboutMePageText } from '../lib/api';
-import { AboutMe } from '../types/interfaces';
-
-interface AboutMeProps {
-  aboutMeText: AboutMe;
-  featureText: {
-    title: string;
-    textBlocks: string[];
-  };
-  alternativeHeading?: string;
-  preview: boolean;
-}
+import { AboutMeProps } from '../types/interfaces';
 
 const AboutMe: NextPage<AboutMeProps> = ({ aboutMeText, preview }) => {
   const router = useRouter();

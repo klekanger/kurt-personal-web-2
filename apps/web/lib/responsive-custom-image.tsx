@@ -9,6 +9,7 @@
  * and create Sanity image URLs for each breakpoint.
  */
 import { imageBuilder } from './sanity';
+import { ResponsiveImageProps } from '../types/interfaces';
 
 // Breakpoints from TailwindCSS - use the same for responsive images
 const IMG_SIZE_SM = 640;
@@ -16,15 +17,6 @@ const IMG_SIZE_MD = 768;
 const IMG_SIZE_LG = 1024;
 const IMG_SIZE_XL = 1280;
 const IMG_SIZE_2XL = 1536;
-
-interface ResponsiveImageProps {
-  imageData: {
-    _ref: string;
-    _type: string;
-  };
-  alt?: string;
-  className?: string;
-}
 
 const ResponsiveImage = ({ imageData, alt, ...rest }: ResponsiveImageProps) => {
   // Make URLs for the different image sizes we need in the picture tag

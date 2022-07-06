@@ -1,23 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import kurtPortrait from '../../public/kurt-kvadratisk-transparent.png';
+import { HeroProps } from '../../types/interfaces';
 import HeadingWithMarks from '../content-renderers/heading-with-marks';
-import Container from './container';
 import SimpleText from '../content-renderers/simple-text';
-import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
-
-interface HeroProps {
-  content: {
-    title: string;
-    images: {
-      alt?: string;
-      asset: object;
-      caption?: string;
-    }[];
-    textBlocks: string[];
-  };
-}
+import Container from './container';
 
 export default function Hero({ content }: HeroProps) {
   const headingToRender = content?.title;

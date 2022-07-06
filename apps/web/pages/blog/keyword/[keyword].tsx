@@ -7,13 +7,7 @@ import Layout from '../../../components/UI/layout';
 import Navbar from '../../../components/UI/navbar';
 import PostTitle from '../../../components/UI/post-title';
 import { getAllKeywords, getAllPostsWithKeyword } from '../../../lib/api';
-import { Post } from '../../../types/interfaces';
-
-interface PostKeywordProps {
-  posts: Post[];
-  keyword: string;
-  preview: boolean;
-}
+import { PostKeywordProps } from '../../../types/interfaces';
 
 const PostKeyword: NextPage<PostKeywordProps> = ({
   posts,

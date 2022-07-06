@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@portabletext/react": "^1.0.6",
+    "@portabletext/types": "^1.0.3",
     "@sanity/client": "^3.3.0",
     "@sanity/image-url": "^1.0.1",
     "@tailwindcss/aspect-ratio": "^0.4.0",

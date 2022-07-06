@@ -1,20 +1,7 @@
 import ResponsiveImage from '../../lib/responsive-custom-image';
-
-interface FigureProps {
-  value: {
-    alt?: string;
-    caption?: string;
-    asset: {
-      _ref: string;
-      _type: string;
-    };
-    _key: string;
-    _type: string;
-  };
-}
+import { FigureProps } from '../../types/interfaces';
 
 const Figure = (props: FigureProps) => {
-  console.log('Figure props', props);
   return (
     <div className='my-4 sm:my-8'>
       <ResponsiveImage

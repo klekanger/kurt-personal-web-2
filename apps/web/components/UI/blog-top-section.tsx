@@ -1,14 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { imageBuilder } from '../../lib/sanity';
-import { Post } from '../../types/interfaces';
 import { BLURDATA } from '../../lib/blurdata';
-
-//import {Suspense} from 'react';
-
-interface BlogTopSectionProps {
-  posts: Post[];
-}
+import { imageBuilder } from '../../lib/sanity';
+import { BlogTopSectionProps } from '../../types/interfaces';
 
 export default function BlogTopSection({ posts }: BlogTopSectionProps) {
   if (!posts) {

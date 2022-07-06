@@ -1,16 +1,9 @@
 import Link from 'next/link';
 import { FaGlobe, FaLanguage, FaNewspaper, FaPenFancy } from 'react-icons/fa';
+import { FeatureProps } from '../../types/interfaces';
 import HeadingWithMarks from '../content-renderers/heading-with-marks';
 import SimpleText from '../content-renderers/simple-text';
 import Container from './container';
-
-interface FeatureProps {
-  content: {
-    title: string;
-    textBlocks: string[];
-  };
-  alternativeHeading?: string; // Heading if you don't want to use the default heading fetched from the CMS
-}
 
 export default function Feature({ content, alternativeHeading }: FeatureProps) {
   const headingToRender = content?.title;

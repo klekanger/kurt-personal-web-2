@@ -1,8 +1,4 @@
-interface ContainerProps {
-  children?: React.ReactNode;
-  noPadding?: boolean;
-  className?: string;
-}
+import { ContainerProps } from '../../types/interfaces';
 
 export default function Container({
   children,

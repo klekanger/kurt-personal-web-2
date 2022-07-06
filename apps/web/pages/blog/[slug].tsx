@@ -13,14 +13,7 @@ import {
   getRelatedPosts,
 } from '../../lib/api';
 import { formatDate } from '../../lib/format-date';
-import { Post } from '../../types/interfaces';
-
-interface PostProps {
-  post: Post;
-  morePosts: Post[];
-  relatedPosts: Post[];
-  preview: boolean;
-}
+import { PostProps } from '../../types/interfaces';
 
 const Post: NextPage<PostProps> = ({
   post,
@@ -28,6 +21,7 @@ const Post: NextPage<PostProps> = ({
   relatedPosts,
   preview,
 }) => {
+  console.log('[slug] post: ', post);
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;

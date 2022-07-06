@@ -6,13 +6,9 @@ import { useEffect, useRef } from 'react';
 import { BLURDATA } from '../../lib/blurdata';
 import { formatDate } from '../../lib/format-date';
 import { imageBuilder } from '../../lib/sanity';
-import { Post } from '../../types/interfaces';
+import { BlogPostListProps } from '../../types/interfaces';
 import DateAndAuthor from './date-and-author';
 import Hashtags from './hashtags';
-
-interface BlogPostListProps {
-  posts: Post[];
-}
 
 export default function BlogPostList({ posts }: BlogPostListProps) {
   gsap.registerPlugin(ScrollTrigger);

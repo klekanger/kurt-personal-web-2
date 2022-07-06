@@ -1,8 +1,5 @@
 import Link from 'next/link';
-
-interface HashtagsProps {
-  keywords?: string[];
-}
+import { HashtagsProps } from '../../types/interfaces';
 
 export default function Hashtags({ keywords }: HashtagsProps) {
   if (!keywords) {
@@ -14,7 +11,7 @@ export default function Hashtags({ keywords }: HashtagsProps) {
       {keywords.map((keyword, index) => (
         <div
           key={index}
-          className='bg-brand-secondary1/30 dark:bg-brand-dark-secondary1-70 text-brand-black dark:text-brand-dark-black hover:text-brand-secondary2 hover:dark:text-brand-dark-secondary2 mr-2 inline-block rounded-md px-2 py-1 text-xs transition duration-500'
+          className='mr-2 inline-block rounded-md bg-brand-secondary1/30 px-2 py-1 text-xs text-brand-black transition duration-500 hover:text-brand-secondary2 dark:bg-brand-dark-secondary1-70 dark:text-brand-dark-black hover:dark:text-brand-dark-secondary2'
         >
           <Link href={`/blog/keyword/${keyword.toLowerCase()}`}>
             <a>#{keyword.toLowerCase()}</a>

@@ -12,17 +12,9 @@ import Pagination from '../../components/UI/pagination';
 import PostTitle from '../../components/UI/post-title';
 import Spinner from '../../components/UI/spinner';
 import { getAllPostsForHome, getNumberOfPosts } from '../../lib/api';
-import { Post } from '../../types/interfaces';
+import { BlogProps } from '../../types/interfaces';
 
 const POSTS_PER_PAGE = 6;
-
-interface BlogProps {
-  firstPosts: Post[];
-  restOfThePosts: Post[];
-  page: string;
-  numberOfPages: number;
-  preview: boolean;
-}
 
 const Blog: NextPage<BlogProps> = ({
   firstPosts,

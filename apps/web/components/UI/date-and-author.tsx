@@ -1,7 +1,4 @@
-interface DateAndAuthorProps {
-  date?: string;
-  author?: string | null;
-}
+import { DateAndAuthorProps } from '../../types/interfaces';
 
 export default function DateAndAuthor({ date, author }: DateAndAuthorProps) {
   if (!date && !author) {

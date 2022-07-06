@@ -1,21 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { imageBuilder } from '../../lib/sanity';
+import { AboutMeProps } from '../../types/interfaces';
 import HeadingWithMarks from '../content-renderers/heading-with-marks';
 import SimpleText from '../content-renderers/simple-text';
 import Container from './container';
-
-interface AboutMeProps {
-  content: {
-    title: string;
-    images: {
-      alt?: string;
-      asset: object;
-      caption?: string;
-    }[];
-    textBlocks: string[];
-  };
-}
 
 export default function AboutMe({ content }: AboutMeProps) {
   const headingToRender = content?.title;

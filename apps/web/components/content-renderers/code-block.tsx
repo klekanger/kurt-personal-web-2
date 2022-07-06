@@ -4,13 +4,7 @@ import {
   atomOneDark,
   atomOneLight,
 } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
-
-interface CodeBlockProps {
-  value: {
-    code: string;
-    language?: string;
-  };
-}
+import { CodeBlockProps } from '../../types/interfaces';
 
 const CodeBlock = (props: CodeBlockProps) => {
   const { resolvedTheme } = useTheme();

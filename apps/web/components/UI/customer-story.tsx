@@ -1,22 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { imageBuilder } from '../../lib/sanity';
+import { CustomerStoryProps } from '../../types/interfaces';
 import HeadingWithMarks from '../content-renderers/heading-with-marks';
 import SimpleText from '../content-renderers/simple-text';
 import Container from './container';
-
-interface CustomerStoryProps {
-  content: {
-    title: string;
-    images: {
-      alt?: string;
-      asset: object;
-      caption?: string;
-    }[];
-    textBlocks: string[];
-  };
-  noXPadding?: boolean; // Skip padding on left and right of text
-}
 
 export default function CustomerStory({
   content,
