@@ -9,6 +9,10 @@ import Container from './container';
 export default function AboutMe({ content }: { content: AboutMeProps }) {
   const headingToRender = content?.title;
 
+  if (!content.images) {
+    return null;
+  }
+
   const topImage =
     imageBuilder(content?.images[0]?.asset).width(1600).format('webp').url() ||
     '#';

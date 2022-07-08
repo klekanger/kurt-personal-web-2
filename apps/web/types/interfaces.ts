@@ -25,7 +25,7 @@ export interface AboutMe {
 
 export interface AboutMeProps {
   title: string;
-  images: SanityImage[];
+  images: SanityImage[] | undefined;
   textBlocks: string[];
 }
 
@@ -143,7 +143,7 @@ export interface HomePageProps {
   aboutMeText: {
     title: string;
     textBlocks: string[];
-    images?: SanityImage[];
+    images: SanityImage[];
   };
   featureText: {
     title: string;
