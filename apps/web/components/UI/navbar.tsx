@@ -70,11 +70,19 @@ export default function Navbar() {
     setLoadingSearchResults(true);
     try {
       const api = fetch(`/api/searchContent?q=${searchInput.searchValue}`);
-      const data = await api
-        .then((res) => res.json())
-        .then((res) => {
-          return res;
+      const data = await api;
+      const apiResult = await data.json();
+
+      // Return if nothing was found
+      if (data.status === 404) {
+        setSearchResults([]);
+        setSearchInput({
+          ...searchInput,
+          searchValue: 'Ikke funnet',
         });
+        setLoadingSearchResults(false);
+        return;
+      }
 
       if (searchInput.searchValue !== '') {
         setSearchInput({
@@ -82,8 +90,7 @@ export default function Navbar() {
           showSearch: false,
         });
 
-        const results: SearchResult[] = data.result;
-        console.log('results', results);
+        const results: SearchResult[] = apiResult.result;
 
         setSearchResults(results);
         setLoadingSearchResults(false);
@@ -223,6 +230,7 @@ export default function Navbar() {
             </OutsideClickHandler>
           </div>
         )}
+
         <OutsideClickHandler onOutsideClick={() => setIsMenuOpen(false)}>
           <div
             className={`absolute right-4 top-0 left-0 z-30 mt-0 h-screen w-11/12 transform rounded-tr-md bg-brand-main2/95 shadow-lg shadow-black backdrop-blur-xl transition duration-200 ease-in-out sm:w-3/5 md:hidden md:translate-x-0 ${
