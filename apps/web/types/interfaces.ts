@@ -244,7 +244,7 @@ export interface ResponsiveImageProps {
   className?: string;
 }
 
-export interface SearchResultType {
+/* export interface SearchResultType {
   result: {
     slug: {
       _type: string;
@@ -254,7 +254,18 @@ export interface SearchResultType {
     webContentType?: string;
     _id: string;
     _score: number;
-  }[];
+  };
+} */
+
+export interface SearchResult {
+  slug: {
+    _type: string;
+    current: string;
+  };
+  title: string;
+  webContentType?: string;
+  _id: string;
+  _score: number;
 }
 
 export interface SimpleTextProps {

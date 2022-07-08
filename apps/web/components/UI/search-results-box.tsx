@@ -1,8 +1,13 @@
 import Link from 'next/link';
 import { MdArticle } from 'react-icons/md';
 import useScrollLock from '../../hooks/useScrollLock';
+import { SearchResult } from '../../types/interfaces';
 
-export default function SearchResultsBox({ searchResults }: any) {
+export default function SearchResultsBox({
+  searchResults,
+}: {
+  searchResults: SearchResult[];
+}) {
   useScrollLock();
 
   return (
@@ -13,7 +18,7 @@ export default function SearchResultsBox({ searchResults }: any) {
             Søkeresultater
           </h1>
           <div className='max-h-[22rem] overflow-y-auto md:max-h-full '>
-            {searchResults.map((result: any) => (
+            {searchResults.map((result) => (
               <Link
                 href={`/blog/${result.slug.current}`}
                 passHref
