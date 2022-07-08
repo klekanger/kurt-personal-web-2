@@ -21,7 +21,6 @@ const Post: NextPage<PostProps> = ({
   relatedPosts,
   preview,
 }) => {
-  console.log('[slug] post: ', post);
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
