@@ -6,11 +6,11 @@ import { useEffect, useRef } from 'react';
 import { BLURDATA } from '../../lib/blurdata';
 import { formatDate } from '../../lib/format-date';
 import { imageBuilder } from '../../lib/sanity';
-import { BlogPostListProps } from '../../types/interfaces';
+import { Post } from '../../types/interfaces';
 import DateAndAuthor from './date-and-author';
 import Hashtags from './hashtags';
 
-export default function BlogPostList({ posts }: BlogPostListProps) {
+export default function BlogPostList({ posts }: { posts: Post[] }) {
   gsap.registerPlugin(ScrollTrigger);
   const revealRefs = useRef([] as HTMLDivElement[]);
   revealRefs.current = [];

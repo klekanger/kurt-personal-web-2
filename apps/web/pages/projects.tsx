@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import Meta from '../components/meta';
@@ -13,7 +13,6 @@ import { ProjectsProps } from '../types/interfaces';
 const Projects: NextPage<ProjectsProps> = ({
   projectsText: servicesText,
   allPosts,
-  preview,
 }) => {
   const router = useRouter();
 
@@ -48,7 +47,7 @@ const Projects: NextPage<ProjectsProps> = ({
 
 export default Projects;
 
-export async function getStaticProps({ preview = false }) {
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const projectsText = await getProjectsText();
   const allPosts = await getAllPostsForHome({
     preview,
@@ -60,4 +59,4 @@ export async function getStaticProps({ preview = false }) {
     props: { projectsText, allPosts, preview },
     revalidate: 1,
   };
-}
+};

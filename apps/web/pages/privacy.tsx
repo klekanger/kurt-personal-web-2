@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { GetStaticProps, NextPage } from 'next';
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import Meta from '../components/meta';
@@ -7,14 +7,10 @@ import FeaturedBlogPosts from '../components/UI/featured-blog-posts';
 import Layout from '../components/UI/layout';
 import PostArticle from '../components/UI/post-article';
 import PostTitle from '../components/UI/post-title';
-import { getFeatureText, getPrivacyText, getAllPostsForHome } from '../lib/api';
+import { getAllPostsForHome, getPrivacyText } from '../lib/api';
 import { PrivacyPageProps } from '../types/interfaces';
 
-const PrivacyPage: NextPage<PrivacyPageProps> = ({
-  privacyText,
-  allPosts,
-  preview,
-}) => {
+const PrivacyPage: NextPage<PrivacyPageProps> = ({ privacyText, allPosts }) => {
   const router = useRouter();
 
   if (!router.isFallback && !privacyText?.title) {
@@ -48,7 +44,7 @@ const PrivacyPage: NextPage<PrivacyPageProps> = ({
 
 export default PrivacyPage;
 
-export async function getStaticProps({ preview = false }) {
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const privacyText = await getPrivacyText();
   const allPosts = await getAllPostsForHome({
     preview,
@@ -60,4 +56,4 @@ export async function getStaticProps({ preview = false }) {
     props: { privacyText, allPosts, preview },
     revalidate: 1,
   };
-}
+};

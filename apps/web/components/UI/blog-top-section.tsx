@@ -2,9 +2,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { BLURDATA } from '../../lib/blurdata';
 import { imageBuilder } from '../../lib/sanity';
-import { BlogTopSectionProps } from '../../types/interfaces';
+import { Post } from '../../types/interfaces';
 
-export default function BlogTopSection({ posts }: BlogTopSectionProps) {
+export default function BlogTopSection({ posts }: { posts: Post[] }) {
   if (!posts) {
     return null;
   }

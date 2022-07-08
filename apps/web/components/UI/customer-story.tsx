@@ -37,7 +37,7 @@ export default function CustomerStory({
               </div>
             </div>
             <br />
-            <Link href='/customer-stories'>
+            <Link href='/projects'>
               <a className='read-more'>
                 Les mer om dette og flere prosjekter her »
               </a>

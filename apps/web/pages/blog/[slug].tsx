@@ -17,7 +17,7 @@ import { PostProps } from '../../types/interfaces';
 
 const Post: NextPage<PostProps> = ({
   post,
-  morePosts,
+  //  morePosts,
   relatedPosts,
   preview,
 }) => {

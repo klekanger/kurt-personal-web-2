@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import Meta from '../components/meta';
@@ -7,9 +7,9 @@ import Layout from '../components/UI/layout';
 import PostArticle from '../components/UI/post-article';
 import PostTitle from '../components/UI/post-title';
 import { getAboutMePageText } from '../lib/api';
-import { AboutMeProps } from '../types/interfaces';
+import { AboutMePageProps } from '../types/interfaces';
 
-const AboutMe: NextPage<AboutMeProps> = ({ aboutMeText, preview }) => {
+const AboutMe: NextPage<AboutMePageProps> = ({ aboutMeText }) => {
   const router = useRouter();
 
   if (!router.isFallback && !aboutMeText?.title) {
@@ -40,11 +40,11 @@ const AboutMe: NextPage<AboutMeProps> = ({ aboutMeText, preview }) => {
 
 export default AboutMe;
 
-export async function getStaticProps({ preview = false }) {
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const aboutMeText = await getAboutMePageText();
 
   return {
     props: { aboutMeText },
     revalidate: 1,
   };
-}
+};

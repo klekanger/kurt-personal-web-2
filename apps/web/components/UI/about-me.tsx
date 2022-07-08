@@ -6,7 +6,7 @@ import HeadingWithMarks from '../content-renderers/heading-with-marks';
 import SimpleText from '../content-renderers/simple-text';
 import Container from './container';
 
-export default function AboutMe({ content }: AboutMeProps) {
+export default function AboutMe({ content }: { content: AboutMeProps }) {
   const headingToRender = content?.title;
 
   const topImage =

@@ -1,6 +1,6 @@
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import { useEffect, useRef } from 'react';
 import Meta from '../components/meta';
 import AboutMe from '../components/UI/about-me';
@@ -23,7 +23,6 @@ const Home: NextPage<HomePageProps> = ({
   heroText,
   aboutMeText,
   customerStoryText,
-  preview,
 }: HomePageProps) => {
   gsap.registerPlugin(ScrollTrigger);
   const revealRefs = useRef([] as HTMLDivElement[]);
@@ -74,7 +73,7 @@ const Home: NextPage<HomePageProps> = ({
 
 export default Home;
 
-export async function getStaticProps({ preview = false }) {
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const allPosts = await getAllPostsForHome({
     preview,
     numberOfPosts: 4,
@@ -82,6 +81,7 @@ export async function getStaticProps({ preview = false }) {
   });
 
   const heroText = await getHeroText();
+
   const aboutMeText = await getAboutMeText();
   const customerStoryText = await getCustomerStoryText();
 
@@ -94,4 +94,4 @@ export async function getStaticProps({ preview = false }) {
     },
     revalidate: 1,
   };
-}
+};

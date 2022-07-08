@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import Meta from '../components/meta';
@@ -9,7 +9,7 @@ import PostTitle from '../components/UI/post-title';
 import { getContactText } from '../lib/api';
 import { ContactProps } from '../types/interfaces';
 
-const Contact: NextPage<ContactProps> = ({ contactText, preview }) => {
+const Contact: NextPage<ContactProps> = ({ contactText }) => {
   const router = useRouter();
 
   if (!router.isFallback && !contactText?.title) {
@@ -40,11 +40,11 @@ const Contact: NextPage<ContactProps> = ({ contactText, preview }) => {
 
 export default Contact;
 
-export async function getStaticProps({ preview = false }) {
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const contactText = await getContactText();
 
   return {
     props: { contactText },
     revalidate: 1,
   };
-}
+};
