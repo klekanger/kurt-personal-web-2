@@ -227,10 +227,10 @@
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
   "version" "15.7.5"
 
-"@types/react-dom@^18.0.6":
-  "integrity" "sha512-/5OFZgfIPSwy+YuIBP/FgJnQnsxhZhjjrnxudMddeblOouIodEQ75X14Rr4wGSG/bknL+Omy9iWlLo1u/9GzAA=="
-  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-18.0.6.tgz"
-  "version" "18.0.6"
+"@types/react-dom@17.0.2":
+  "integrity" "sha512-Icd9KEgdnFfJs39KyRyr0jQ7EKhq8U6CcHRMGAS45fp5qgUvxL3ujUCfWFttUK2UErqZNj97t9gsVPNAqcwoCg=="
+  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-17.0.2.tgz"
+  "version" "17.0.2"
   dependencies:
     "@types/react" "*"
 
@@ -248,13 +248,12 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@18.0.15":
-  "integrity" "sha512-iz3BtLuIYH1uWdsv6wXYdhozhqj20oD4/Hk2DNXIn1kFsmp9x8d9QB6FnPhfkbhd2PgEONt9Q1x/ebkwjfFLow=="
-  "resolved" "https://registry.npmjs.org/@types/react/-/react-18.0.15.tgz"
-  "version" "18.0.15"
+"@types/react@*", "@types/react@17.0.2":
+  "integrity" "sha512-Xt40xQsrkdvjn1EyWe1Bc0dJLcil/9x2vAuW7ya+PuQip4UYUaXyhzWmAbwRsdMgwOFHpfp7/FFZebDU6Y8VHA=="
+  "resolved" "https://registry.npmjs.org/@types/react/-/react-17.0.2.tgz"
+  "version" "17.0.2"
   dependencies:
     "@types/prop-types" "*"
-    "@types/scheduler" "*"
     "csstype" "^3.0.2"
 
 "@types/react@^17.0.42":

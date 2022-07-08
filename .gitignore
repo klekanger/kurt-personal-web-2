@@ -15,6 +15,7 @@ build
 
 #studio
 /apps/studio/dist
+/apps/studio/public
 
 # misc
 .DS_Store
