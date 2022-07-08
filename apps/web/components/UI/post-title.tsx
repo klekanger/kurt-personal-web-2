@@ -1,6 +1,4 @@
-interface PostTitleProps {
-  children: React.ReactNode;
-}
+import { PostTitleProps } from '../../types/interfaces';
 
 export default function PostTitle({ children }: PostTitleProps) {
   return (

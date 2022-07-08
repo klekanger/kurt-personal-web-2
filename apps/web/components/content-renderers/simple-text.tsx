@@ -1,9 +1,5 @@
 // Renders simple text content, in cases where rich text is not needed
-
-interface SimpleTextProps {
-  text: string;
-  marks?: string;
-}
+import { SimpleTextProps } from '../../types/interfaces';
 
 const SimpleText = ({
   text,

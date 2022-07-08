@@ -6,6 +6,9 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      screens: {
+        '4xl': '1920px',
+      },
       fontFamily: {
         title: ['"Tenor Sans"', 'sans-serif'],
         body: ['"Open Sans"', 'sans-serif'],

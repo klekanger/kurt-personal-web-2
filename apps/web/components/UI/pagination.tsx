@@ -2,11 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import { AiOutlineCaretLeft, AiOutlineCaretRight } from 'react-icons/ai';
-
-interface PaginationProps {
-  numberOfPages: number;
-  startPage: number;
-}
+import { PaginationProps } from '../../types/interfaces';
 
 export default function Pagination({
   numberOfPages,
@@ -57,7 +53,7 @@ export default function Pagination({
               type='button'
               aria-label='Gå til forrige side'
               disabled={currentPage <= 1}
-              className='shadow-brand-main1/70 text-brand-white bg-brand-main1 hover:bg-brand-main1/80 hover:shadow-brand-main1/90 flex h-8  w-8 cursor-pointer items-center justify-center rounded-full border border-transparent align-middle text-lg shadow-lg transition duration-500 ease-in-out disabled:bg-gray-200 disabled:text-gray-400 dark:shadow-none'
+              className='flex h-8 w-8 cursor-pointer items-center justify-center rounded-full  border border-transparent bg-brand-main1 align-middle text-lg text-brand-white shadow-lg shadow-brand-main1/70 transition duration-500 ease-in-out hover:bg-brand-main1/80 hover:shadow-brand-main1/90 disabled:bg-gray-200 disabled:text-gray-400 dark:shadow-none'
               onClick={(e) => {
                 e.preventDefault();
                 if (currentPage > 1) {
@@ -84,7 +80,7 @@ export default function Pagination({
               aria-label={`Søk etter side ${currentPage}. Enter for å søke.`}
               placeholder='Side'
               onChange={(e) => handleChange(e)}
-              className='border-brand-main1/50 mx-1 w-12 cursor-pointer rounded border py-1 text-center leading-tight transition duration-150 ease-in-out focus:outline-none'
+              className='mx-1 w-12 cursor-pointer rounded border border-brand-main1/50 py-1 text-center leading-tight transition duration-150 ease-in-out focus:outline-none'
             />
 
             <span>{` av ${numberOfPages - 1}`}</span>
@@ -94,7 +90,7 @@ export default function Pagination({
               type='button'
               aria-label='Gå til neste side'
               disabled={currentPage >= numberOfPages - 1}
-              className='shadow-brand-main1/70 text-brand-white bg-brand-main1 hover:bg-brand-main1/80 hover:shadow-brand-main1/90 flex h-8 w-8  cursor-pointer items-center justify-center rounded-full border border-transparent align-middle text-lg shadow-lg transition duration-500 ease-in-out disabled:bg-gray-200 disabled:text-gray-400 dark:shadow-none'
+              className='flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border  border-transparent bg-brand-main1 align-middle text-lg text-brand-white shadow-lg shadow-brand-main1/70 transition duration-500 ease-in-out hover:bg-brand-main1/80 hover:shadow-brand-main1/90 disabled:bg-gray-200 disabled:text-gray-400 dark:shadow-none'
               onClick={(e) => {
                 e.preventDefault();
                 if (currentPage < numberOfPages - 1) {
@@ -111,7 +107,7 @@ export default function Pagination({
         </div>
 
         {outOfRange && (
-          <div className='bg-brand-main1 text-brand-white m-auto mt-2 w-max rounded-md px-2 py-1 text-center text-sm'>
+          <div className='m-auto mt-2 w-max rounded-md bg-brand-main1 px-2 py-1 text-center text-sm text-brand-white'>
             {`Må være mellom 1 og ${numberOfPages - 1}`}
           </div>
         )}

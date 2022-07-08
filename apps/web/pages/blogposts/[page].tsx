@@ -1,4 +1,5 @@
-import type { NextPage } from 'next';
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import HeadingWithMarks from '../../components/content-renderers/heading-with-marks';
@@ -7,22 +8,13 @@ import BlogPostList from '../../components/UI/blog-post-list';
 import BlogTopSection from '../../components/UI/blog-top-section';
 import Container from '../../components/UI/container';
 import Layout from '../../components/UI/layout';
-import Navbar from '../../components/UI/navbar';
 import Pagination from '../../components/UI/pagination';
 import PostTitle from '../../components/UI/post-title';
 import Spinner from '../../components/UI/spinner';
 import { getAllPostsForHome, getNumberOfPosts } from '../../lib/api';
-import { Post } from '../../types/interfaces';
+import { BlogProps, Post } from '../../types/interfaces';
 
 const POSTS_PER_PAGE = 6;
-
-interface BlogProps {
-  firstPosts: Post[];
-  restOfThePosts: Post[];
-  page: string;
-  numberOfPages: number;
-  preview: boolean;
-}
 
 const Blog: NextPage<BlogProps> = ({
   firstPosts,
@@ -55,7 +47,7 @@ const Blog: NextPage<BlogProps> = ({
                   />
                 </PostTitle>
                 {/* Show featured blogposts only on first page */}
-                {page === '1' && <BlogTopSection posts={firstPosts} />}{' '}
+                {page === 1 && <BlogTopSection posts={firstPosts} />}{' '}
                 <BlogPostList posts={restOfThePosts} />
               </>
             )}
@@ -75,17 +67,16 @@ const Blog: NextPage<BlogProps> = ({
 
 export default Blog;
 
-export async function getStaticProps({
+export const getStaticProps: GetStaticProps = async ({
   params,
-  preview = false,
-}: {
-  params: { page: string };
-  preview?: boolean;
-}) {
+  // preview = false,
+}) => {
   // Get the three first posts if we're on the first page
   // We'll make these the featured posts
-  let firstPosts: string[] = [];
-  if (params.page === '1') {
+  const page = Number(params?.page) || 1;
+
+  let firstPosts: Post[] = [];
+  if (page === 1) {
     firstPosts = await getAllPostsForHome({
       numberOfPosts: 3,
       offset: 0,
@@ -94,7 +85,7 @@ export async function getStaticProps({
 
   const restOfThePosts = await getAllPostsForHome({
     numberOfPosts: POSTS_PER_PAGE,
-    offset: 3 + (Number(params.page) - 1) * POSTS_PER_PAGE,
+    offset: 3 + (page - 1) * POSTS_PER_PAGE,
   });
 
   const numberOfPosts = await getNumberOfPosts();
@@ -104,15 +95,15 @@ export async function getStaticProps({
     props: {
       firstPosts,
       restOfThePosts,
-      page: params.page,
+      page: page,
       numberOfPages,
     },
     revalidate: 1,
   };
-}
+};
 
 // Make a number of static pages, depending on how many posts we have and POSTS_PER_PAGE
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const numberOfPosts = await getNumberOfPosts();
   const numberOfPages = Math.ceil(numberOfPosts / POSTS_PER_PAGE) - 1;
 
@@ -129,4 +120,4 @@ export async function getStaticPaths() {
     paths,
     fallback: false,
   };
-}
+};

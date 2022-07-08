@@ -1,16 +1,5 @@
 import ResponsiveImage from '../../lib/responsive-custom-image';
-
-interface FigureProps {
-  value: {
-    alt?: string;
-    asset: {
-      _ref: string;
-      _type: string;
-    };
-    _key: string;
-    _type: string;
-  };
-}
+import { FigureProps } from '../../types/interfaces';
 
 const Figure = (props: FigureProps) => {
   return (
@@ -20,6 +9,9 @@ const Figure = (props: FigureProps) => {
         alt={props?.value?.alt}
         className='rounded-md shadow-lg'
       />
+      <figcaption className='pt-4 pl-2 text-sm italic text-gray-500 dark:text-gray-400'>
+        {props?.value?.caption}
+      </figcaption>
     </div>
   );
 };

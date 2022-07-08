@@ -1273,7 +1273,7 @@
     "get-random-values-esm" "^1.0.0"
     "lodash" "^4.17.21"
 
-"@sanity/cli@3.0.0-dev-preview.9":
+"@sanity/cli@^3.0.0-dev-preview.9", "@sanity/cli@3.0.0-dev-preview.9":
   "integrity" "sha512-hGUg8CYEJsxZ3aGjxZOoIjt0lxaloJ0F7/tEYGMmABpyG0X0eTFbsgO8lua/pQkYt1uui+0WihLpQAWl9+pUnw=="
   "resolved" "https://registry.npmjs.org/@sanity/cli/-/cli-3.0.0-dev-preview.9.tgz"
   "version" "3.0.0-dev-preview.9"

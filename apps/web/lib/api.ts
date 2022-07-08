@@ -1,9 +1,10 @@
 import groq from 'groq';
 import client, { previewClient } from './sanity';
+import { Post } from '../types/interfaces';
 
-const getUniquePosts = (posts: string[]) => {
+const getUniquePosts = (posts: Post[]) => {
   const slugs = new Set();
-  return posts.filter((post: any) => {
+  return posts.filter((post) => {
     if (slugs.has(post.slug)) {
       return false;
     } else {
@@ -28,7 +29,7 @@ const postFields = `
 const getClient = (preview: boolean) => (preview ? previewClient : client);
 
 // Get number of posts
-export async function getNumberOfPosts() {
+export async function getNumberOfPosts(): Promise<number> {
   const data = await client.fetch(groq`count(*[_type == 'project' ])`);
   return data;
 }
@@ -82,7 +83,7 @@ export async function getAllKeywords() {
 // Fetch text for About me front page module
 export async function getAboutMeText() {
   const data = await client.fetch(
-    groq`*[_type == "webFrontpageContent" && webFrontPageIdentifier =='om-meg-modul' ]`
+    groq`*[_type == "webFrontpageContent" && webFrontPageIdentifier =='om-meg-personlig' ]`
   );
 
   return data[0];
@@ -118,7 +119,7 @@ export async function getCustomerStoriesText() {
 // Fetch text for customer story front page module
 export async function getCustomerStoryText() {
   const data = await client.fetch(
-    groq`*[_type == "webFrontpageContent" && webFrontPageIdentifier =='kundereferanse' ]`
+    groq`*[_type == "webFrontpageContent" && webFrontPageIdentifier =='utvalgt-prosjekt' ]`
   );
 
   return data[0];
@@ -136,7 +137,7 @@ export async function getFeatureText() {
 // Fetch text for the Hero section
 export async function getHeroText() {
   const data = await client.fetch(
-    groq`*[_type == "webFrontpageContent" && webFrontPageIdentifier =='hero-modul' ]`
+    groq`*[_type == "webFrontpageContent" && webFrontPageIdentifier =='hero-personal' ]`
   );
 
   return data[0];
@@ -152,9 +153,9 @@ export async function getPrivacyText() {
 }
 
 // Fetch text for "Tjenester" sub page
-export async function getServicesText() {
+export async function getProjectsText() {
   const data = await client.fetch(
-    groq`*[_type == "webContent" && webContentType == 'service']`
+    groq`*[_type == "webContent" && webContentType == 'project']`
   );
 
   return data[0];
@@ -205,8 +206,8 @@ export async function getPostAndMorePosts({ slug = '', preview = false }) {
 // Get all related posts for a post with a slug
 export async function getRelatedPosts({
   slug,
-  preview = false,
-}: {
+}: // preview = false,
+{
   slug: string;
   preview: boolean;
 }) {

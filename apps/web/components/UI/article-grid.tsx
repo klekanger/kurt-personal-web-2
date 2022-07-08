@@ -1,13 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { BLURDATA } from '../../lib/blurdata';
 import { imageBuilder } from '../../lib/sanity';
 import { Post } from '../../types/interfaces';
 
-interface ArticleGridProps {
-  posts: Post[];
-}
-
-export default function ArticleGrid({ posts }: ArticleGridProps) {
+export default function ArticleGrid({ posts }: { posts: Post[] }) {
   return (
     <>
       <div className='space-y-8 py-8'>
@@ -29,6 +26,8 @@ export default function ArticleGrid({ posts }: ArticleGridProps) {
                         .url() || '#'
                     }
                     alt={post?.mainImage?.alt}
+                    placeholder='blur'
+                    blurDataURL={BLURDATA}
                   />
                 </div>
               </Link>

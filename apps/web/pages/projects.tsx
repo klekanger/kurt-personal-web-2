@@ -1,4 +1,4 @@
-import type { GetStaticProps, NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
 import Meta from '../components/meta';
@@ -7,19 +7,22 @@ import FeaturedBlogPosts from '../components/UI/featured-blog-posts';
 import Layout from '../components/UI/layout';
 import PostArticle from '../components/UI/post-article';
 import PostTitle from '../components/UI/post-title';
-import { getAllPostsForHome, getPrivacyText } from '../lib/api';
-import { PrivacyPageProps } from '../types/interfaces';
+import { getAllPostsForHome, getProjectsText } from '../lib/api';
+import { ProjectsProps } from '../types/interfaces';
 
-const PrivacyPage: NextPage<PrivacyPageProps> = ({ privacyText, allPosts }) => {
+const Projects: NextPage<ProjectsProps> = ({
+  projectsText: servicesText,
+  allPosts,
+}) => {
   const router = useRouter();
 
-  if (!router.isFallback && !privacyText?.title) {
+  if (!router.isFallback && !servicesText?.title) {
     return <ErrorPage statusCode={404} />;
   }
 
   return (
     <>
-      <Meta titleTag={`Lekanger tekst & kode - ${privacyText?.title}`} />
+      <Meta titleTag={`Lekanger tekst & kode - ${servicesText?.title}`} />
       <Layout preview={false}>
         <Container>
           <article>
@@ -27,9 +30,9 @@ const PrivacyPage: NextPage<PrivacyPageProps> = ({ privacyText, allPosts }) => {
               <PostTitle>Laster innhold...</PostTitle>
             ) : (
               <PostArticle
-                title={privacyText?.title}
-                coverImage={privacyText.mainImage}
-                content={privacyText.body}
+                title={servicesText?.title}
+                coverImage={servicesText.mainImage}
+                content={servicesText.body}
               />
             )}
           </article>
@@ -42,10 +45,10 @@ const PrivacyPage: NextPage<PrivacyPageProps> = ({ privacyText, allPosts }) => {
   );
 };
 
-export default PrivacyPage;
+export default Projects;
 
 export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
-  const privacyText = await getPrivacyText();
+  const projectsText = await getProjectsText();
   const allPosts = await getAllPostsForHome({
     preview,
     numberOfPosts: 4,
@@ -53,7 +56,7 @@ export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   });
 
   return {
-    props: { privacyText, allPosts, preview },
+    props: { projectsText, allPosts, preview },
     revalidate: 1,
   };
 };

@@ -1,9 +1,5 @@
+import { LayoutProps } from '../../types/interfaces';
 import Footer from './footer';
-
-interface LayoutProps {
-  preview: boolean;
-  children: React.ReactNode;
-}
 
 export default function Layout({ preview, children }: LayoutProps) {
   return (

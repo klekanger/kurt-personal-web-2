@@ -1,61 +1,105 @@
-import { FaEnvelope, FaPhone } from 'react-icons/fa';
+import {
+  FaEnvelope,
+  FaPhone,
+  FaFacebook,
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+} from 'react-icons/fa';
 import Container from './container';
 
 export default function ContactMe() {
   return (
-    <div className='dark:bg-brand-dark-main1-10 bg-brand-main1-10  mt-16  py-8 sm:py-16 '>
+    <div className='default-spacing bg-brand-main1-10 dark:bg-brand-dark-main1-10'>
       <Container>
-        <article className='flex flex-col items-center justify-center bg-[url(/images/coffee-transparent.png)] bg-contain bg-right bg-no-repeat text-sm'>
-          <h1 className='text-brand-secondary2 dark:text-brand-dark-secondary2 pb-8 text-center font-extrabold '>
-            Vil du vite mer?
+        <article className='my-8 flex flex-col items-center justify-center bg-[url(/images/coffee-transparent.png)] bg-contain bg-right bg-no-repeat text-sm md:my-16'>
+          <h1 className='pb-8 text-center font-extrabold text-brand-secondary2 dark:text-brand-dark-secondary2 '>
+            Her finner du meg
           </h1>
           <p className='text-center text-lg'>
-            Ta kontakt for en uforpliktende prat.
-          </p>
-          <p className='text-center text-lg font-semibold'>
-            Jeg spanderer kaffen!
+            ...eller stikk innom for en kaffe!
           </p>
 
-          <div className='text-brand-black mt-8 grid grid-cols-1 gap-8 pb-8 md:grid-cols-3'>
-            <section className='dark:highlight-white-30 text-md bg-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 shadow-brand-secondary1-70 group hover:shadow-brand-secondary1-70 aspect-auto transform cursor-pointer rounded-md py-6 px-4 shadow-lg backdrop-blur-md transition duration-500 hover:scale-[var(--scale-min)] dark:shadow-none dark:hover:shadow-none sm:text-sm xl:px-4'>
-              <div className='flex justify-center text-4xl'>
-                <FaPhone aria-hidden='true' />
-              </div>
-              <div className='text-center'>
-                <h5>Telefon</h5>
-                <br />
-                <a className='cursor-pointer' href='tel:+4740210140'>
+          <div className='mt-8 grid grid-cols-1 gap-8 pb-8 text-brand-black md:grid-cols-2 lg:grid-cols-3 4xl:grid-cols-6'>
+            <section className='hover:wiggle dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 backdrop-blur-md transition duration-500 hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm xl:px-4'>
+              <a className='cursor-pointer' href='tel:+4740210140'>
+                <div className='flex justify-center text-4xl'>
+                  <FaPhone aria-hidden='true' />
+                </div>
+                <div className='text-center'>
+                  <h5>Telefon</h5>
+                  <br />
                   +47 - 4021 0140
-                </a>
-              </div>
+                </div>
+              </a>
             </section>
 
-            <section className='dark:highlight-white-30 text-md bg-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 shadow-brand-secondary1-70 group hover:shadow-brand-secondary1-70 aspect-auto transform cursor-pointer rounded-md py-6 px-4 shadow-lg backdrop-blur-md transition duration-500 hover:scale-[var(--scale-min)] dark:shadow-none dark:hover:shadow-none sm:text-sm xl:px-4'>
-              <div className='flex justify-center text-4xl'>
-                <FaEnvelope aria-hidden='true' />
-              </div>
-              <div className='text-center'>
-                <h5>Epost</h5>
-                <br />
-                <a className='cursor-pointer' href='mailto:kurt@lekanger.no'>
+            <section className='hover:wiggle dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 backdrop-blur-md transition duration-500 hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm xl:px-4'>
+              <a className='cursor-pointer' href='mailto:kurt@lekanger.no'>
+                <div className='flex justify-center text-4xl'>
+                  <FaEnvelope aria-hidden='true' />
+                </div>
+                <div className='text-center'>
+                  <h5>Epost</h5>
+                  <br />
                   kurt@lekanger.no
-                </a>
-              </div>
+                </div>
+              </a>
             </section>
 
-            <section className='dark:highlight-white-30 text-md bg-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 shadow-brand-secondary1-70 group hover:shadow-brand-secondary1-70 aspect-auto transform cursor-pointer rounded-md py-6 px-4 shadow-lg backdrop-blur-md transition duration-500 hover:scale-[var(--scale-min)] dark:shadow-none dark:hover:shadow-none sm:text-sm  xl:px-4'>
-              <div className='flex justify-center text-4xl'>
-                <FaEnvelope aria-hidden='true' />
-              </div>
-              <div className='text-center'>
-                <h5>Adresse</h5>
-                <br />
-                <address>
-                  <div className='font-semibold'>Lekanger tekst & kode AS</div>
-                  <div>Gartner Moens vei 32A</div>
-                  <div>1809 ASKIM</div>
-                </address>
-              </div>
+            <section className='hover:wiggle dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 backdrop-blur-md transition duration-500 hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm  xl:px-4'>
+              <a className='cursor-pointer' href='https://github.com/klekanger'>
+                <div className='flex justify-center text-4xl'>
+                  <FaGithub aria-hidden='true' />
+                </div>
+                <div className='text-center'>
+                  <h5>Github</h5>
+                  <br />
+                  github.com/klekanger
+                </div>
+              </a>
+            </section>
+            <section className='hover:wiggle dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 backdrop-blur-md transition duration-500 hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm  xl:px-4'>
+              <a
+                className='cursor-pointer'
+                href='https://www.linkedin.com/in/lekanger/'
+              >
+                <div className='flex justify-center text-4xl'>
+                  <FaLinkedin aria-hidden='true' />
+                </div>
+                <div className='text-center'>
+                  <h5>LinkedIn</h5>
+                  <br />
+                  linkedin.com/in/lekanger/
+                </div>
+              </a>
+            </section>
+            <section className='hover:wiggle dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 backdrop-blur-md transition duration-500 hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm  xl:px-4'>
+              <a className='cursor-pointer' href='https://twitter.com/lekanger'>
+                <div className='flex justify-center text-4xl'>
+                  <FaTwitter aria-hidden='true' />
+                </div>
+                <div className='text-center'>
+                  <h5>Twitter</h5>
+                  <br />
+                  twitter.com/lekanger
+                </div>
+              </a>
+            </section>
+            <section className='hover:wiggle dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 backdrop-blur-md transition duration-500 hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm  xl:px-4'>
+              <a
+                className='cursor-pointer'
+                href='https://www.facebook.com/lekanger'
+              >
+                <div className='flex justify-center text-4xl'>
+                  <FaFacebook aria-hidden='true' />
+                </div>
+                <div className='text-center'>
+                  <h5>Facebook</h5>
+                  <br />
+                  facebook.com/lekanger
+                </div>
+              </a>
             </section>
           </div>
         </article>

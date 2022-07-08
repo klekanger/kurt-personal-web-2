@@ -1,77 +1,88 @@
-import type { NextPage } from 'next';
-import { useEffect, useState } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import type { NextPage, GetStaticProps } from 'next';
+import { useEffect, useRef } from 'react';
 import Meta from '../components/meta';
 import AboutMe from '../components/UI/about-me';
 import ContactMe from '../components/UI/contact-me';
 import CustomerStory from '../components/UI/customer-story';
-import Feature from '../components/UI/feature';
+import FeaturedBlogPosts from '../components/UI/featured-blog-posts';
 import Hero from '../components/UI/hero';
 import Layout from '../components/UI/layout';
+import { HomePageProps } from '../types/interfaces';
 
 import {
   getAboutMeText,
   getAllPostsForHome,
   getCustomerStoryText,
-  getFeatureText,
   getHeroText,
-  getMenuItems,
 } from '../lib/api';
-import { HomePageProps } from '../types/interfaces';
 
 const Home: NextPage<HomePageProps> = ({
   allPosts,
   heroText,
   aboutMeText,
-  featureText,
   customerStoryText,
-  preview,
 }: HomePageProps) => {
-  const [mounted, setMounted] = useState(false);
+  gsap.registerPlugin(ScrollTrigger);
+  const revealRefs = useRef([] as HTMLDivElement[]);
+  revealRefs.current = [];
+
+  const addToRefs = (el: HTMLDivElement) => {
+    revealRefs.current.push(el);
+  };
 
   useEffect(() => {
-    setMounted(true);
+    revealRefs.current.forEach((el, i) => {
+      gsap.from(el, {
+        y: 100,
+        scrollTrigger: {
+          id: `section-${i + 1}`,
+          trigger: el,
+          start: 'top bottom',
+          end: 'bottom bottom',
+          scrub: 1,
+        },
+      });
+    });
   }, []);
 
   return (
     <>
       <Meta />
+      <Layout preview={false}>
+        <Hero content={heroText} />
+        <div className='scroll-reveal' ref={addToRefs}>
+          <FeaturedBlogPosts content={allPosts} />
+        </div>
+        <div className='scroll-reveal' ref={addToRefs}>
+          <AboutMe content={aboutMeText} />
+        </div>
+        <div className='scroll-reveal' ref={addToRefs}>
+          <CustomerStory content={customerStoryText} />
+        </div>
+        <div className='scroll-reveal' ref={addToRefs}>
+          <ContactMe />
+        </div>
 
-      <>
-        <Layout preview={false}>
-          <Hero content={heroText} />
-
-          <div data-gsap='reveal-bottom'>
-            <Feature content={featureText} />
-          </div>
-          <div data-gsap='reveal-bottom'>
-            <AboutMe content={aboutMeText} />
-          </div>
-          <div data-gsap='reveal-bottom'>
-            <CustomerStory content={customerStoryText} />
-          </div>
-          <div data-gsap='reveal-bottom'>
-            <ContactMe />
-          </div>
-
-          <br />
-        </Layout>
-      </>
+        <br />
+      </Layout>
     </>
   );
 };
 
 export default Home;
 
-export async function getStaticProps({ preview = false }) {
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const allPosts = await getAllPostsForHome({
     preview,
-    numberOfPosts: 6,
+    numberOfPosts: 4,
     offset: 0,
   });
 
   const heroText = await getHeroText();
+
   const aboutMeText = await getAboutMeText();
-  const featureText = await getFeatureText();
   const customerStoryText = await getCustomerStoryText();
 
   return {
@@ -79,9 +90,8 @@ export async function getStaticProps({ preview = false }) {
       allPosts,
       heroText,
       aboutMeText,
-      featureText,
       customerStoryText,
     },
     revalidate: 1,
   };
-}
+};

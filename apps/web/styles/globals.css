@@ -109,8 +109,7 @@ input[type='number']::-webkit-outer-spin-button {
   }
 
   a {
-    color: inherit;
-    text-decoration: none;
+    @apply text-inherit no-underline ;
   }
 
   p a {
@@ -128,6 +127,11 @@ input[type='number']::-webkit-outer-spin-button {
 }
 
 @layer components {
+
+.default-spacing {
+  @apply my-0 md:my-16 sm:my-8 pb-16 sm:pb-0;
+}
+
   .highlight-white-30 {
     box-shadow: inset 0 1px 0 0 rgb(255 255 255 / 30%) !important;
   }
@@ -151,6 +155,34 @@ input[type='number']::-webkit-outer-spin-button {
   }
 
   .read-more {
-    @apply text-brand-secondary2 dark:text-brand-dark-white dark:bg-brand-secondary2-70 text-inherit no-underline dark:rounded-sm dark:px-1;
+    @apply text-brand-secondary2 dark:text-brand-dark-white dark:bg-brand-secondary2-70 text-inherit no-underline dark:rounded-sm dark:px-1 hover:text-brand-linkHover dark:hover:text-brand-dark-main1;
   }
+
+.wiggle svg {
+  animation: wiggle-animation 1s linear ;
+
+}
+
+  @keyframes wiggle-animation {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(0deg); }
+    15% { transform: rotate(5deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+
+
+  .firefox-backdrop-blur {
+    @apply bg-white/80 dark:bg-black/80;
+
+  }
+
+  
+  @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .firefox-backdrop-blur {
+    @apply bg-transparent;
+    }
+  }
+
 }

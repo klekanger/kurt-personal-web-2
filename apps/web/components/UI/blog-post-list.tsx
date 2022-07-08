@@ -1,16 +1,39 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useEffect, useRef } from 'react';
+import { BLURDATA } from '../../lib/blurdata';
 import { formatDate } from '../../lib/format-date';
 import { imageBuilder } from '../../lib/sanity';
 import { Post } from '../../types/interfaces';
 import DateAndAuthor from './date-and-author';
 import Hashtags from './hashtags';
 
-interface BlogPostListProps {
-  posts: Post[];
-}
+export default function BlogPostList({ posts }: { posts: Post[] }) {
+  gsap.registerPlugin(ScrollTrigger);
+  const revealRefs = useRef([] as HTMLDivElement[]);
+  revealRefs.current = [];
 
-export default function BlogPostList({ posts }: BlogPostListProps) {
+  const addToRefs = (el: HTMLDivElement) => {
+    revealRefs.current.push(el);
+  };
+
+  useEffect(() => {
+    revealRefs.current.forEach((el, i) => {
+      gsap.from(el, {
+        y: 100,
+        scrollTrigger: {
+          id: `section-${i + 1}`,
+          trigger: el,
+          start: 'top bottom',
+          end: 'bottom bottom',
+          scrub: 1,
+        },
+      });
+    });
+  }, []);
+
   return (
     <div className='mt-8 space-y-8'>
       {posts.map((post) => {
@@ -20,8 +43,8 @@ export default function BlogPostList({ posts }: BlogPostListProps) {
         });
 
         return (
-          <div key={post._id} data-gsap='reveal-bottom'>
-            <div className=' grid-cols-12  gap-2 pb-8 md:grid lg:gap-8'>
+          <div key={post._id} ref={addToRefs}>
+            <div className=' grid-cols-12 gap-2 pb-8 md:grid lg:gap-8'>
               <Link href={`/blog/${post?.slug?.current}`} passHref>
                 <div className=' self-top order-last cursor-pointer rounded-md md:col-span-5 lg:col-span-6'>
                   <Image
@@ -36,6 +59,8 @@ export default function BlogPostList({ posts }: BlogPostListProps) {
                         .url() || '#'
                     }
                     alt={post?.mainImage?.alt}
+                    placeholder='blur'
+                    blurDataURL={BLURDATA}
                   />
                 </div>
               </Link>

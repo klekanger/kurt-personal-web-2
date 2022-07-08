@@ -7,7 +7,7 @@ const useScrollLock = () => {
 
     document.body.setAttribute(
       'style',
-      `overflow: hidden; position:fixed; padding-right:${scrollBarWidth}px; right:0; left:0;`
+      `overflow: hidden; position:fixed; padding-right: ${scrollBarWidth}px; right:0; left:0;`
     );
 
     return () => {

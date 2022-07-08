@@ -8,12 +8,7 @@
  * @returns An <h1> element with the text and highlighted marks.
  *
  */
-
-interface HeadingWithMarksProps {
-  heading: string;
-  marks?: string;
-  wrap?: boolean;
-}
+import { HeadingWithMarksProps } from '../../types/interfaces';
 
 export default function HeadingWithMarks({
   heading,
@@ -33,7 +28,7 @@ export default function HeadingWithMarks({
   }
 
   return (
-    <h1 className='text-brand-main2 dark:text-brand-dark-main2 text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl'>
+    <h1 className='text-3xl font-extrabold tracking-tight text-brand-main2 dark:text-brand-dark-main2 sm:text-4xl md:text-5xl'>
       <div dangerouslySetInnerHTML={{ __html: headlineWithHighlights }} />
     </h1>
   );
