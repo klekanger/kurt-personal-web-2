@@ -36,11 +36,20 @@ export default async function handler(
     }
 
     res.status(200).json({ result: data, message: 'success' });
-  } catch (error: any) {
+  } catch (error) {
     console.error(error);
+
+    let errorMsg;
+
+    if (error instanceof Error) {
+      errorMsg = error.message;
+    } else {
+      errorMsg = 'Something went wrong';
+    }
+
     res.status(500).json({
       result: 'En feil har oppstått',
-      message: error.details.description,
+      message: errorMsg,
     });
   }
 }

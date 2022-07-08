@@ -11,16 +11,18 @@ export default function CustomerStory({
   noXPadding = false,
 }: CustomerStoryProps) {
   const headingToRender = content?.title;
-  let featuredImage;
+  const featuredImage = { src: '', alt: '' };
 
-  if (!content?.images) {
-    featuredImage = null;
+  if (!content.images) {
+    featuredImage.src = '/#';
   } else {
-    featuredImage =
+    featuredImage.src =
       imageBuilder(content?.images[0]?.asset)
         .width(1600)
         .format('webp')
         .url() || '#';
+
+    featuredImage.alt = content?.images[0]?.alt || '';
   }
 
   return (
@@ -47,8 +49,8 @@ export default function CustomerStory({
             {featuredImage && (
               <Image
                 className='absolute inset-0 h-full w-full rounded-md object-cover object-center'
-                src={featuredImage}
-                alt={content?.images[0]?.alt}
+                src={featuredImage.src}
+                alt={featuredImage.alt}
                 layout='fill'
               />
             )}

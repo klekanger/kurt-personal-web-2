@@ -40,7 +40,11 @@ const Contact: NextPage<ContactProps> = ({ contactText }) => {
 
 export default Contact;
 
-export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
+export const getStaticProps: GetStaticProps = async (
+  {
+    /*  preview = false  */
+  }
+) => {
   const contactText = await getContactText();
 
   return {

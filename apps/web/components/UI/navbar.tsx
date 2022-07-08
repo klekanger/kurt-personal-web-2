@@ -15,7 +15,7 @@ import OutsideClickHandler from 'react-outside-click-handler';
 import companyDarkLogo from '../../public/LEKANGER-logo-darkmode.svg';
 import companyLogo from '../../public/LEKANGER-logo.svg';
 import SearchResultsBox from './search-results-box';
-import { SearchResultType } from '../../types/interfaces';
+import { SearchResult } from '../../types/interfaces';
 
 // Navbar menu items
 const navigation = [
@@ -29,7 +29,7 @@ export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchResultsOpen, setIsSearchResultsOpen] = useState(false);
-  const [searchResults, setSearchResults] = useState([] as any);
+  const [searchResults, setSearchResults] = useState([] as SearchResult[]);
   const [loadingSearchResults, setLoadingSearchResults] = useState(false);
   const [searchInput, setSearchInput] = useState({
     searchValue: '',
@@ -73,7 +73,7 @@ export default function Navbar() {
       const data = await api
         .then((res) => res.json())
         .then((res) => {
-          return res as SearchResultType;
+          return res;
         });
 
       if (searchInput.searchValue !== '') {
@@ -82,7 +82,8 @@ export default function Navbar() {
           showSearch: false,
         });
 
-        const results = data.result || [];
+        const results: SearchResult[] = data.result;
+        console.log('results', results);
 
         setSearchResults(results);
         setLoadingSearchResults(false);

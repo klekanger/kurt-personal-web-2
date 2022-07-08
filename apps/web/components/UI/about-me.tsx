@@ -12,6 +12,7 @@ export default function AboutMe({ content }: { content: AboutMeProps }) {
   const topImage =
     imageBuilder(content?.images[0]?.asset).width(1600).format('webp').url() ||
     '#';
+
   const secondImage =
     imageBuilder(content?.images[1]?.asset).width(1600).format('webp').url() ||
     '#';

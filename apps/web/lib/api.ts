@@ -72,7 +72,11 @@ export async function getAllPostsWithKeyword(keyword: string) {
   return data;
 }
 
-export async function getAllKeywords() {
+interface KeywordProps {
+  keywords: string[];
+}
+
+export async function getAllKeywords(): Promise<KeywordProps[]> {
   const data = await client.fetch(
     groq`*[_type == "project" && keywords != null]{keywords}`
   );

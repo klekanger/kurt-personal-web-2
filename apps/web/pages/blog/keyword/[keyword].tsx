@@ -4,7 +4,6 @@ import { useRouter } from 'next/router';
 import ArticleGrid from '../../../components/UI/article-grid';
 import Container from '../../../components/UI/container';
 import Layout from '../../../components/UI/layout';
-import Navbar from '../../../components/UI/navbar';
 import PostTitle from '../../../components/UI/post-title';
 import { getAllKeywords, getAllPostsWithKeyword } from '../../../lib/api';
 import { PostKeywordProps } from '../../../types/interfaces';
@@ -65,7 +64,7 @@ export async function getStaticPaths() {
   // Make sure we're only adding unique keywords
   const keywords = new Set<string>();
 
-  allKeywords.forEach((post: any) => {
+  allKeywords.forEach((post) => {
     post.keywords.forEach((keyword: string) => {
       keywords.add(keyword.toLowerCase());
     });
