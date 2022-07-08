@@ -25,7 +25,7 @@ export interface AboutMe {
 
 export interface AboutMeProps {
   title: string;
-  images?: SanityImage[];
+  images: SanityImage[];
   textBlocks: string[];
 }
 
