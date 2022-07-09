@@ -4,6 +4,20 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
     },
+    "web#build": {
+      "dependsOn": [
+        "^build",
+        "$NEXT_PUBLIC_SANITY_DATASET",
+        "$NEXT_PUBLIC_SANITY_PROJECT_ID",
+        "$SANITY_API_TOKEN",
+        "$SANITY_PREVIEW_SECRET"
+      ],
+      "outputs": [".next/**"]
+    },
+    "studio#build": {
+      "dependsOn": ["^build"],
+      "outputs": ["public/**"]
+    },
     "lint": {
       "outputs": []
     },
