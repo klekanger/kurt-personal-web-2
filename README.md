@@ -11,6 +11,7 @@ Nettsidene i Next.js ligger under [./apps/web](https://github.com/klekanger/kurt
 # Teknologivalg
 
 - TypeScript
+- Turborepo
 
 ## Frontend
 
