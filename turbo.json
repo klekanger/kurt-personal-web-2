@@ -14,10 +14,6 @@
       ],
       "outputs": [".next/**"]
     },
-    "studio#build": {
-      "dependsOn": ["^build"],
-      "outputs": ["public/**"]
-    },
     "lint": {
       "outputs": []
     },
