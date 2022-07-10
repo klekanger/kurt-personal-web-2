@@ -34,6 +34,7 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "@sanity/cli": "^3.0.0-dev-preview.9"
+    "@sanity/cli": "^3.0.0-dev-preview.9",
+    "eslint": "^8.19.0"
   }
 }

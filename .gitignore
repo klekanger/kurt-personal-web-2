@@ -35,3 +35,10 @@ yarn-error.log*
 
 # turbo
 .turbo
+apps/studio/dist/static/.gitkeep
+apps/studio/dist/static/apple-touch-icon.png
+apps/studio/dist/static/favicon-192.png
+apps/studio/dist/static/favicon-512.png
+apps/studio/dist/static/favicon.ico
+apps/studio/dist/static/favicon.svg
+apps/studio/dist/static/manifest.webmanifest
