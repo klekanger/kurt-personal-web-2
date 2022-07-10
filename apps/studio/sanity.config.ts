@@ -9,7 +9,7 @@ import {deskTool} from 'sanity/desk'
 import {schemaTypes} from './schemas'
 import {codeInput} from '@sanity/code-input'
 
-const DATASET = 'development'
+const DATASET = 'production'
 
 export default createConfig({
   name: 'default',
