@@ -17,7 +17,7 @@ export default function Meta({ titleTag }: { titleTag?: string }) {
       <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
       <meta
         name='description'
-        content={`Innholdsprodusent og utvikler med lang erfaring - hjelper deg med tekst og webutvikling.`}
+        content={`Innholdsprodusent med lang erfaring som journalist og redaktør. Utvikler og designer web-applikasjoner.`}
       />
       <meta property='og:image' content={HOME_OG_IMAGE_URL} key='ogimage' />
 
@@ -39,7 +39,7 @@ export default function Meta({ titleTag }: { titleTag?: string }) {
 
       <meta
         property='og:site_name'
-        content='Lekanger tekst & kode AS'
+        content='Lekanger tekst & kode'
         key='ogsitename'
       />
       <meta
@@ -53,7 +53,7 @@ export default function Meta({ titleTag }: { titleTag?: string }) {
       />
       <meta
         property='og:description'
-        content='Tekstforfatter, innholdsprodusent, oversetter og utvikler. Leverer moderne nettsider og tekst til nettsider, brosjyrer, whitepapere og kampanjesider.'
+        content='Tekstforfatter, innholdsprodusent, oversetter og utvikler. Javascript, React, Next.js, Gatsby.'
         key='ogdesc'
       />
     </Head>

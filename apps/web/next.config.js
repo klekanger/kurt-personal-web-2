@@ -4,16 +4,6 @@ module.exports = {
 };
 
 module.exports = {
-  i18n: {
-    locales: ['no'],
-    defaultLocale: 'no',
-  },
-  images: {
-    domains: ['cdn.sanity.io'],
-  },
-};
-
-module.exports = {
   async redirects() {
     return [
       {
@@ -22,5 +12,15 @@ module.exports = {
         permanent: true,
       },
     ];
+  },
+};
+
+module.exports = {
+  i18n: {
+    locales: ['no'],
+    defaultLocale: 'no',
+  },
+  images: {
+    domains: ['cdn.sanity.io'],
   },
 };
