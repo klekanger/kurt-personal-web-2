@@ -46,7 +46,7 @@ input[type='number']::-webkit-outer-spin-button {
   @apply w-full;
 }
 .navbar-scrolled {
-  @apply mt-0 pb-0 shadow-md backdrop-blur-md transition-all duration-200 ease-linear;
+  @apply mt-0 pb-0 shadow-md backdrop-blur-md bg-white/80 transition-all duration-200 ease-linear;
 }
 
 .navbar-scrolled .logo {
