@@ -12,3 +12,15 @@ module.exports = {
     domains: ['cdn.sanity.io'],
   },
 };
+
+module.exports = {
+  async redirects() {
+    return [
+      {
+        source: '/project',
+        destination: '/blog',
+        permanent: true,
+      },
+    ];
+  },
+};
