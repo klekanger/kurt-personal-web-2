@@ -25,7 +25,7 @@ export default function Hero({ content }: HeroProps) {
               </Link>
 
               <Link href='/projects'>
-                <a className='btn btn-secondary'>Utvalgte prosjekter</a>
+                <a className='btn btn-secondary'>Prosjekter</a>
               </Link>
             </div>
           </section>

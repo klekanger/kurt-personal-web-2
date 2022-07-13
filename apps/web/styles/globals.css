@@ -143,9 +143,10 @@ input[type='number']::-webkit-outer-spin-button {
   }
 
   .btn {
-    @apply dark:text-brand-dark-black rounded-md border border-transparent px-8 py-3 text-base font-medium shadow-lg transition duration-500 ease-in-out sm:mt-0 md:py-4 md:px-10 md:text-lg;
+    @apply flex justify-center items-center dark:text-brand-dark-black rounded-md border border-transparent w-48 h-16 shadow-lg transition duration-500 ease-in-out sm:mt-0 px-4 py-2 text-base md:text-lg;
   }
 
+  
   .btn-primary {
     @apply shadow-brand-main1-70 dark:highlight-white-10 text-brand-white  bg-brand-main1 dark:bg-brand-dark-main1 dark:hover:bg-brand-dark-main1-70 hover:bg-brand-main1-70 hover:shadow-brand-main1-70;
   }
