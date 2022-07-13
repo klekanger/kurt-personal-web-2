@@ -35,7 +35,7 @@ export default function FeaturedBlogPosts({ content }: { content: Post[] }) {
               <div className='left-0 bottom-0 w-full transform rounded-b-lg px-0 py-0 duration-500 hover:text-brand-secondary1 md:absolute md:bg-brand-black/60 md:bg-gradient-to-t md:px-6 md:pb-2  md:text-brand-white md:shadow-lg md:backdrop-blur-lg'>
                 <Link href={`/blog/${post.slug.current}`}>
                   <a>
-                    <h2 className='mb:pb-0 transform cursor-pointer pb-2 text-xl text-brand-main2 transition duration-500 hover:text-brand-secondary2 dark:text-brand-dark-main2 dark:hover:text-brand-dark-secondary1 md:mt-4 md:font-extrabold md:text-brand-white md:hover:text-brand-secondary1 md:dark:text-brand-dark-main1 lg:text-2xl'>
+                    <h2 className='mb:pb-0 transform cursor-pointer pb-2 text-xl text-brand-main2 transition duration-500 hover:text-brand-secondary2 dark:text-brand-dark-main2 dark:hover:text-brand-dark-secondary1 md:mt-4 md:text-brand-white md:hover:text-brand-secondary1 md:dark:text-brand-dark-main1 lg:text-2xl'>
                       {post.title.length > 90
                         ? post.title.slice(0, 90).concat('[...]')
                         : post.title}
