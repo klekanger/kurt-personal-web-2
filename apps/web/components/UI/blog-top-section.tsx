@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { BLURDATA } from '../../lib/blurdata';
 import { imageBuilder } from '../../lib/sanity';
 import { Post } from '../../types/interfaces';
 
@@ -32,12 +31,10 @@ export default function BlogTopSection({ posts }: { posts: Post[] }) {
                   }
                   alt={firstPost?.mainImage?.alt}
                   priority={true}
-                  placeholder='blur'
-                  blurDataURL={BLURDATA}
                 />
               </div>
             </Link>
-            <div className='left-0 md:absolute md:top-4 md:bg-brand-black/50 md:px-6 md:py-4 md:shadow-lg md:backdrop-blur-lg lg:top-[10%] lg:w-2/3'>
+            <div className='left-0 md:absolute md:top-4  md:bg-brand-black/50 md:px-6 md:py-4 md:shadow-lg md:backdrop-blur-lg lg:top-[10%] lg:w-2/3'>
               <Link href={`/blog/${firstPost?.slug?.current}`} passHref>
                 <h2 className='transform cursor-pointer pb-2 text-2xl text-brand-main2 transition duration-500 hover:text-brand-secondary2 dark:text-brand-dark-main2  dark:hover:text-brand-dark-secondary1 md:font-extrabold md:text-brand-main1 md:hover:text-brand-secondary1 md:dark:text-brand-dark-main1 lg:text-4xl'>
                   <a>{firstPost?.title}</a>
@@ -72,8 +69,6 @@ export default function BlogTopSection({ posts }: { posts: Post[] }) {
                   }
                   alt={secondPost?.mainImage?.alt}
                   priority={true}
-                  placeholder='blur'
-                  blurDataURL={BLURDATA}
                 />
               </div>
             </Link>
@@ -111,8 +106,6 @@ export default function BlogTopSection({ posts }: { posts: Post[] }) {
                   }
                   alt={thirdPost?.mainImage?.alt}
                   priority={true}
-                  placeholder='blur'
-                  blurDataURL={BLURDATA}
                 />
               </div>
             </Link>

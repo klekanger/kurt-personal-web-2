@@ -13,7 +13,7 @@ export default function Hero({ content }: HeroProps) {
     <article className='bg-brand-main1-10 dark:bg-brand-dark-main1-10'>
       <Container>
         <div className='default-spacing flex justify-between'>
-          <section className='w-full px-2 pt-8 pb-16 md:w-7/12 md:pt-16 lg:pt-32'>
+          <section className='w-full px-2 pt-8 pb-16 md:w-7/12 md:pt-16'>
             <div className='pb-4 md:pb-8'>
               <HeadingWithMarks heading={headingToRender} />
             </div>
