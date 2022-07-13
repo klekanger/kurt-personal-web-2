@@ -19,8 +19,8 @@ import SearchResultsBox from './search-results-box';
 
 // Navbar menu items
 const navigation = [
-  { name: 'Prosjekter', href: '/projects' },
   { name: 'Om meg', href: '/about-me' },
+  { name: 'Prosjekter', href: '/projects' },
   { name: 'Blogg', href: '/blogposts/1' },
 ];
 
