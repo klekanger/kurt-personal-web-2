@@ -127,9 +127,9 @@ export default function Navbar() {
       <header
         className={`navbar fixed ${
           isScrolled
-            ? 'navbar-scrolled dark:bg-brand-dark-background/80'
+            ? 'navbar-scrolled firefox-backdrop-blur dark:bg-brand-dark-background/80'
             : 'dark:bg-brand-dark-background'
-        } top-0 z-20 bg-white/80 pt-2 backdrop-blur-md`}
+        } top-0 z-20 pt-2`}
       >
         <div className='mx-auto flex flex-row items-center justify-between px-4 md:items-center md:px-7 lg:container'>
           <Link href='/' passHref>
