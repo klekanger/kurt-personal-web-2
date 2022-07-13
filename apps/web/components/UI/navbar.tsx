@@ -14,8 +14,8 @@ import {
 import OutsideClickHandler from 'react-outside-click-handler';
 import companyDarkLogo from '../../public/LEKANGER-logo-darkmode.svg';
 import companyLogo from '../../public/LEKANGER-logo.svg';
-import SearchResultsBox from './search-results-box';
 import { SearchResult } from '../../types/interfaces';
+import SearchResultsBox from './search-results-box';
 
 // Navbar menu items
 const navigation = [
@@ -241,10 +241,13 @@ export default function Navbar() {
           >
             <div className='flex h-full flex-col items-center justify-center space-y-12 overflow-hidden px-2 pl-24 pb-32 text-xl font-bold sm:text-2xl'>
               {navigation.map((item) => (
-                <Link passHref href={item.href} key={item.name}>
-                  <span className='text-brand-grey hover:text-brand-main1 '>
+                <Link href={item.href} key={item.name}>
+                  <a
+                    className='text-brand-grey hover:text-brand-main1 '
+                    onClick={() => setIsMenuOpen(false)}
+                  >
                     {item.name}
-                  </span>
+                  </a>
                 </Link>
               ))}
               <div className='text-center text-6xl text-brand-white'>
