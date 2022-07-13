@@ -156,8 +156,9 @@ input[type='number']::-webkit-outer-spin-button {
   }
 
   .read-more {
-    @apply text-brand-secondary2 dark:text-brand-dark-white dark:bg-brand-secondary2-70 text-inherit no-underline dark:rounded-sm dark:px-1 hover:text-brand-linkHover dark:hover:text-brand-dark-main1;
+    @apply text-brand-link decoration-brand-main2/30 underline decoration-1 underline-offset-2 hover:text-brand-linkHover dark:text-brand-dark-white dark:bg-brand-secondary2-70  dark:rounded-sm dark:px-1 dark:hover:text-brand-dark-main1;
   }
+
 
 .wiggle svg {
   animation: wiggle-animation 1s linear ;
