@@ -7,7 +7,7 @@ export default function Container({
 }: ContainerProps) {
   return (
     <div
-      className={`mx-auto overflow-hidden lg:container ${
+      className={`mx-auto max-w-6xl overflow-hidden ${
         noPadding ? '' : 'px-2 md:px-5'
       }`}
       {...rest}
