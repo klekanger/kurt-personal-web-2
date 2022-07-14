@@ -3,7 +3,7 @@ import { HOME_OG_IMAGE_URL } from '../lib/constants';
 
 export default function Meta({
   titleTag,
-  ogImage,
+  ogImage = HOME_OG_IMAGE_URL,
   ogUrl,
 }: {
   titleTag?: string;
@@ -29,7 +29,7 @@ export default function Meta({
       />
       <meta
         property='og:image'
-        content={`https://www.lekanger.no/${ogImage || HOME_OG_IMAGE_URL}`}
+        content={`https://www.lekanger.no/${ogImage}`}
         key='ogimage'
       />
 
