@@ -29,7 +29,7 @@ export default function Meta({
       />
       <meta
         property='og:image'
-        content={ogImage || HOME_OG_IMAGE_URL}
+        content={`https://www.lekanger.no/${ogImage || HOME_OG_IMAGE_URL}`}
         key='ogimage'
       />
 
