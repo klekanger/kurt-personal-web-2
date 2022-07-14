@@ -72,6 +72,7 @@ export default function Meta({
         content='Tekstforfatter, innholdsprodusent, oversetter og utvikler. Javascript, React, Next.js, Gatsby.'
         key='ogdesc'
       />
+      <meta property='og:type' content='website' key='ogtype' />
     </Head>
   );
 }
