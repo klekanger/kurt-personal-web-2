@@ -160,6 +160,16 @@ export default function Navbar() {
               ))}
               <div
                 tabIndex={0}
+                role='search'
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    e.preventDefault();
+                    setSearchInput({
+                      ...searchInput,
+                      showSearch: !searchInput.showSearch,
+                    });
+                  }
+                }}
                 onClick={() =>
                   setSearchInput({
                     ...searchInput,
@@ -169,7 +179,6 @@ export default function Navbar() {
               >
                 <RiSearchLine
                   className='transform text-2xl transition duration-200 hover:scale-110'
-                  role='search'
                   aria-label='Klikk for å søke på nettstedet'
                 />
               </div>

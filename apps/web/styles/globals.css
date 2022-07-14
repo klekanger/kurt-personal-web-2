@@ -148,7 +148,7 @@ input[type='number']::-webkit-outer-spin-button {
 
   
   .btn-primary {
-    @apply shadow-brand-main1-70 dark:highlight-white-10 text-brand-white  bg-brand-main1 dark:bg-brand-dark-main1 dark:hover:bg-brand-dark-main1-70 hover:bg-brand-main1-70 hover:shadow-brand-main1-70;
+    @apply shadow-brand-main1-70 dark:highlight-white-10 text-brand-white bg-brand-main1 dark:bg-brand-dark-main1 dark:hover:bg-brand-dark-main1-70 hover:bg-brand-main1-70 hover:shadow-brand-main1-70;
   }
 
   .btn-secondary {

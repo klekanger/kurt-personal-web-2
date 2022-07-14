@@ -27,7 +27,7 @@ export default function ContactMe() {
                   <FaPhone aria-hidden='true' />
                 </div>
                 <div className='text-center'>
-                  <h5>Telefon</h5>
+                  <h2 className='text-lg'>Telefon</h2>
                   <br />
                   +47 - 4021 0140
                 </div>
@@ -40,7 +40,7 @@ export default function ContactMe() {
                   <FaEnvelope aria-hidden='true' />
                 </div>
                 <div className='text-center'>
-                  <h5>Epost</h5>
+                  <h2 className='text-lg'>Epost</h2>
                   <br />
                   kurt@lekanger.no
                 </div>
@@ -53,7 +53,7 @@ export default function ContactMe() {
                   <FaGithub aria-hidden='true' />
                 </div>
                 <div className='text-center'>
-                  <h5>Github</h5>
+                  <h2 className='text-lg'>Github</h2>
                   <br />
                   github.com/klekanger
                 </div>
@@ -68,7 +68,7 @@ export default function ContactMe() {
                   <FaLinkedin aria-hidden='true' />
                 </div>
                 <div className='text-center'>
-                  <h5>LinkedIn</h5>
+                  <h2 className='text-lg'>LinkedIn</h2>
                   <br />
                   linkedin.com/in/lekanger/
                 </div>
@@ -80,7 +80,7 @@ export default function ContactMe() {
                   <FaTwitter aria-hidden='true' />
                 </div>
                 <div className='text-center'>
-                  <h5>Twitter</h5>
+                  <h2 className='text-lg'>Twitter</h2>
                   <br />
                   twitter.com/lekanger
                 </div>
@@ -95,7 +95,7 @@ export default function ContactMe() {
                   <FaFacebook aria-hidden='true' />
                 </div>
                 <div className='text-center'>
-                  <h5>Facebook</h5>
+                  <h2 className='text-lg'>Facebook</h2>
                   <br />
                   facebook.com/lekanger
                 </div>
