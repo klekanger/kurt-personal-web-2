@@ -10,7 +10,6 @@ export default function Meta({
   ogImage?: string;
   ogUrl?: string;
 }) {
-  console.log('ogImage', ogImage);
   return (
     <Head>
       <link rel='icon' href='/favicon.ico' />
