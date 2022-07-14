@@ -133,7 +133,7 @@ export default function Navbar() {
       >
         <div className='mx-auto flex flex-row items-center justify-between px-4 md:items-center md:px-7 lg:container'>
           <Link href='/' passHref>
-            <a className='logo w-1/2 md:w-4/12 lg:w-3/12'>
+            <a className='logo w-1/2 md:w-4/12 lg:w-2/12'>
               <Image
                 className='cursor-pointer'
                 src={resolvedTheme === 'light' ? companyLogo : companyDarkLogo}
