@@ -1,3 +1,4 @@
+import Meta from 'components/meta';
 import type { NextPage } from 'next';
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
@@ -19,22 +20,25 @@ const PostKeyword: NextPage<PostKeywordProps> = ({
   }
 
   return (
-    <Layout preview={preview}>
-      <Container>
-        {router.isFallback ? (
-          <PostTitle>Laster innhold...</PostTitle>
-        ) : (
-          <div>
-            <h1 className='leading-relaxed text-brand-main2'>
-              Artikler tagget med{' '}
-              <span className='text-brand-secondary2'>#{`${keyword}`}</span>
-            </h1>
+    <>
+      <Meta titleTag={`${keyword} - Lekanger tekst & kode`} />
+      <Layout preview={preview}>
+        <Container>
+          {router.isFallback ? (
+            <PostTitle>Laster innhold...</PostTitle>
+          ) : (
+            <div>
+              <h1 className='leading-relaxed text-brand-main2'>
+                Artikler tagget med{' '}
+                <span className='text-brand-secondary2'>#{`${keyword}`}</span>
+              </h1>
 
-            <ArticleGrid posts={posts} />
-          </div>
-        )}
-      </Container>
-    </Layout>
+              <ArticleGrid posts={posts} />
+            </div>
+          )}
+        </Container>
+      </Layout>
+    </>
   );
 };
 

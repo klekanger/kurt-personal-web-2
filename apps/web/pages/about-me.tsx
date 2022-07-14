@@ -1,3 +1,4 @@
+import { imageBuilder } from 'lib/sanity';
 import type { NextPage, GetStaticProps } from 'next';
 import ErrorPage from 'next/error';
 import { useRouter } from 'next/router';
@@ -16,9 +17,16 @@ const AboutMe: NextPage<AboutMePageProps> = ({ aboutMeText }) => {
     return <ErrorPage statusCode={404} />;
   }
 
+  const ogImageUrl =
+    imageBuilder(aboutMeText.mainImage?.asset).width(1200).height(630).url() ||
+    '#';
+
   return (
     <>
-      <Meta titleTag={`Lekanger tekst & kode - ${aboutMeText?.title}`} />
+      <Meta
+        titleTag={`Lekanger tekst & kode - ${aboutMeText?.title}`}
+        ogImage={ogImageUrl}
+      />
       <Layout preview={false}>
         <Container>
           <article>

@@ -2,8 +2,8 @@
   "name": "Lekanger tekst & kode",
   "short_name": "Lekanger",
   "start_url": "/",
-  "display": "standalone",
-  "background_color": "#90cdf4",
+  "display": "browser",
+  "background_color": "#fcfcfc",
   "theme_color": "#fff",
   "orientation": "portrait-primary",
   "icons": [

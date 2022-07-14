@@ -14,6 +14,7 @@ import {
 } from '../../lib/api';
 import { formatDate } from '../../lib/format-date';
 import { PostProps } from '../../types/interfaces';
+import { imageBuilder } from '../../lib/sanity';
 
 const Post: NextPage<PostProps> = ({
   post,
@@ -31,48 +32,53 @@ const Post: NextPage<PostProps> = ({
     updated: post?._updatedAt,
   });
 
+  const ogImageUrl =
+    imageBuilder(post.mainImage?.asset).width(1200).height(630).url() || '#';
+
   return (
-    <Layout preview={preview}>
-      <Container>
-        {router.isFallback ? (
-          <PostTitle>Laster innhold...</PostTitle>
-        ) : (
-          <>
-            <Meta titleTag={`Lekanger tekst & kode - ${post?.title}`} />
-            <article>
-              <PostArticle
-                title={post.title}
-                coverImage={post.mainImage}
-                content={post.body}
-                date={dateToShow}
-                author={post?.author?.name || ''}
-                keywords={post?.keywords}
-              />
-            </article>
-            {relatedPosts && (
-              <aside className='dark:highlight-white-10 mt-16 rounded-md bg-gray-200 px-8 pt-4 pb-8 shadow-lg dark:bg-brand-dark-background2'>
-                <h2 className='pb-4 text-brand-main2 dark:text-brand-dark-main2 '>
-                  Relaterte artikler
-                </h2>
-                <ul>
-                  {relatedPosts.map((post) => {
-                    return (
-                      <li key={post._id} className='list-inside list-disc'>
-                        <Link href={`/blog/${post?.slug?.current}`}>
-                          <a className='transform transition duration-100 hover:text-brand-main2 hover:dark:text-brand-dark-main2'>
-                            {post?.title}
-                          </a>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </ul>
-              </aside>
-            )}
-          </>
-        )}
-      </Container>
-    </Layout>
+    <>
+      <Meta titleTag={`${post?.title}`} ogImage={ogImageUrl} />
+      <Layout preview={preview}>
+        <Container>
+          {router.isFallback ? (
+            <PostTitle>Laster innhold...</PostTitle>
+          ) : (
+            <>
+              <article>
+                <PostArticle
+                  title={post.title}
+                  coverImage={post.mainImage}
+                  content={post.body}
+                  date={dateToShow}
+                  author={post?.author?.name || ''}
+                  keywords={post?.keywords}
+                />
+              </article>
+              {relatedPosts && (
+                <aside className='dark:highlight-white-10 mt-16 rounded-md bg-gray-200 px-8 pt-4 pb-8 shadow-lg dark:bg-brand-dark-background2'>
+                  <h2 className='pb-4 text-brand-main2 dark:text-brand-dark-main2 '>
+                    Relaterte artikler
+                  </h2>
+                  <ul>
+                    {relatedPosts.map((post) => {
+                      return (
+                        <li key={post._id} className='list-inside list-disc'>
+                          <Link href={`/blog/${post?.slug?.current}`}>
+                            <a className='transform transition duration-100 hover:text-brand-main2 hover:dark:text-brand-dark-main2'>
+                              {post?.title}
+                            </a>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </aside>
+              )}
+            </>
+          )}
+        </Container>
+      </Layout>
+    </>
   );
 };
 

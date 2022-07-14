@@ -1,7 +1,13 @@
 import Head from 'next/head';
 import { HOME_OG_IMAGE_URL } from '../lib/constants';
 
-export default function Meta({ titleTag }: { titleTag?: string }) {
+export default function Meta({
+  titleTag,
+  ogImage,
+}: {
+  titleTag?: string;
+  ogImage?: string;
+}) {
   return (
     <Head>
       <link rel='icon' href='/favicon.ico' />
@@ -17,9 +23,13 @@ export default function Meta({ titleTag }: { titleTag?: string }) {
       <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
       <meta
         name='description'
-        content={`Innholdsprodusent med lang erfaring som journalist og redaktør. Utvikler og designer web-applikasjoner.`}
+        content={`Innholdsprodusent med lang erfaring som journalist og redaktør. Utvikler i JavaScript, React og Next.js.`}
       />
-      <meta property='og:image' content={HOME_OG_IMAGE_URL} key='ogimage' />
+      <meta
+        property='og:image'
+        content={ogImage || HOME_OG_IMAGE_URL}
+        key='ogimage'
+      />
 
       <title>
         {`${
