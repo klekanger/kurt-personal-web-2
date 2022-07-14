@@ -12,7 +12,7 @@ export default function FeaturedBlogPosts({ content }: { content: Post[] }) {
         <div className='pb-4 md:pb-8'>
           <HeadingWithMarks heading='Siste <mark>blogginnlegg</mark>' />
         </div>
-        <div className='grid grid-rows-2 md:grid-cols-2 md:gap-16 4xl:grid-cols-4 4xl:grid-rows-1'>
+        <div className='grid grid-rows-2 md:grid-cols-2 md:gap-16'>
           {content.map((post) => (
             <div className='relative' key={post._id}>
               <div className='relative aspect-[4/3] w-full rounded-lg'>
