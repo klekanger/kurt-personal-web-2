@@ -35,11 +35,11 @@ export default function BlogTopSection({ posts }: { posts: Post[] }) {
               </div>
             </Link>
             <div className='left-0 md:absolute md:top-4  md:bg-brand-black/50 md:px-6 md:py-4 md:shadow-lg md:backdrop-blur-lg lg:top-[10%] lg:w-2/3'>
-              <Link href={`/blog/${firstPost?.slug?.current}`} passHref>
-                <h2 className='transform cursor-pointer pb-2 text-2xl text-brand-main2 transition duration-500 hover:text-brand-secondary2 dark:text-brand-dark-main2  dark:hover:text-brand-dark-secondary1 md:font-extrabold md:text-brand-main1 md:hover:text-brand-secondary1 md:dark:text-brand-dark-main1 lg:text-4xl'>
-                  <a>{firstPost?.title}</a>
-                </h2>
-              </Link>
+              <h2 className='transform cursor-pointer pb-2 text-2xl text-brand-main2 transition duration-500 hover:text-brand-secondary2 dark:text-brand-dark-main2  dark:hover:text-brand-dark-secondary1 md:font-extrabold md:text-brand-main1 md:hover:text-brand-secondary1 md:dark:text-brand-dark-main1 lg:text-4xl'>
+                <Link href={`/blog/${firstPost?.slug?.current}`} passHref>
+                  {firstPost?.title}
+                </Link>
+              </h2>
               <p className='mt-2 md:text-brand-dark-white '>
                 {firstPost?.excerpt &&
                   `${firstPost?.excerpt[0]?.children[0]?.text.slice(0, 500)}${
@@ -73,11 +73,11 @@ export default function BlogTopSection({ posts }: { posts: Post[] }) {
               </div>
             </Link>
             <div className='mt-4'>
-              <Link href={`/blog/${secondPost?.slug?.current}`} passHref>
-                <h2 className='cursor-pointer pb-2 text-2xl text-brand-main2 hover:text-brand-secondary2 dark:text-brand-dark-main2 dark:hover:text-brand-dark-secondary2'>
-                  <a>{secondPost?.title}</a>
-                </h2>
-              </Link>
+              <h2 className='cursor-pointer pb-2 text-2xl text-brand-main2 hover:text-brand-secondary2 dark:text-brand-dark-main2 dark:hover:text-brand-dark-secondary2'>
+                <Link href={`/blog/${secondPost?.slug?.current}`} passHref>
+                  {secondPost?.title}
+                </Link>
+              </h2>
               <p className='mt-2 md:text-base'>
                 {secondPost?.excerpt &&
                   `${secondPost?.excerpt[0]?.children[0]?.text.slice(0, 500)}${
@@ -110,11 +110,11 @@ export default function BlogTopSection({ posts }: { posts: Post[] }) {
               </div>
             </Link>
             <div className='mt-4'>
-              <Link href={`/blog/${secondPost?.slug?.current}`} passHref>
-                <h2 className='cursor-pointer pb-2 text-2xl text-brand-main2 hover:text-brand-secondary2 dark:text-brand-dark-main2 dark:hover:text-brand-dark-secondary2'>
-                  <a>{thirdPost?.title}</a>
-                </h2>
-              </Link>
+              <h2 className='cursor-pointer pb-2 text-2xl text-brand-main2 hover:text-brand-secondary2 dark:text-brand-dark-main2 dark:hover:text-brand-dark-secondary2'>
+                <Link href={`/blog/${secondPost?.slug?.current}`} passHref>
+                  {thirdPost?.title}
+                </Link>
+              </h2>
               <p className='mt-2 md:text-base'>
                 {thirdPost?.excerpt &&
                   `${thirdPost?.excerpt[0]?.children[0]?.text.slice(0, 500)}${
