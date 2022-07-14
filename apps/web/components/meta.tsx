@@ -3,13 +3,14 @@ import { HOME_OG_IMAGE_URL } from '../lib/constants';
 
 export default function Meta({
   titleTag,
-  ogImage = HOME_OG_IMAGE_URL,
+  ogImage,
   ogUrl,
 }: {
   titleTag?: string;
   ogImage?: string;
   ogUrl?: string;
 }) {
+  console.log('ogImage', ogImage);
   return (
     <Head>
       <link rel='icon' href='/favicon.ico' />
@@ -29,7 +30,9 @@ export default function Meta({
       />
       <meta
         property='og:image'
-        content={`https://www.lekanger.no/${ogImage}`}
+        content={
+          ogImage ? ogImage : `https://www.lekanger.no/${HOME_OG_IMAGE_URL}`
+        }
         key='ogimage'
       />
 
