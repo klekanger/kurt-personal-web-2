@@ -29,10 +29,13 @@ const Blog: NextPage<BlogProps> = ({
     return <ErrorPage statusCode={404} />;
   }
 
+  const ogUrl = `https://www.lekanger.no/blogposts/${page}`;
+
   return (
     <>
       <Meta
         titleTag={`Lekanger tekst & kode - siste blogginnlegg -  side ${page}`}
+        ogUrl={ogUrl}
       />
       <Layout preview={preview}>
         <Container>

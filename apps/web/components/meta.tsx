@@ -4,9 +4,11 @@ import { HOME_OG_IMAGE_URL } from '../lib/constants';
 export default function Meta({
   titleTag,
   ogImage,
+  ogUrl,
 }: {
   titleTag?: string;
   ogImage?: string;
+  ogUrl?: string;
 }) {
   return (
     <Head>
@@ -44,7 +46,11 @@ export default function Meta({
       <meta name='twitter:creator' content='@lekanger' key='twhandle' />
 
       {/* Open Graph */}
-      <meta property='og:url' content='https://www.lekanger.no' key='ogurl' />
+      <meta
+        property='og:url'
+        content={ogUrl || 'https://www.lekanger.no'}
+        key='ogurl'
+      />
       <meta property='og:locale' content='nb-NO' key='oglocale' />
 
       <meta

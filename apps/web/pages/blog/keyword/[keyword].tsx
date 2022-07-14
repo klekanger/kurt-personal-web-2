@@ -19,9 +19,11 @@ const PostKeyword: NextPage<PostKeywordProps> = ({
     return <ErrorPage statusCode={404} />;
   }
 
+  const ogUrl = `https://www.lekanger.no/blog/keyword/${keyword}`;
+
   return (
     <>
-      <Meta titleTag={`${keyword} - Lekanger tekst & kode`} />
+      <Meta titleTag={`${keyword} - Lekanger tekst & kode`} ogUrl={ogUrl} />
       <Layout preview={preview}>
         <Container>
           {router.isFallback ? (

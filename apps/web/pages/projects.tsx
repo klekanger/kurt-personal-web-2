@@ -30,6 +30,7 @@ const Projects: NextPage<ProjectsProps> = ({
       <Meta
         titleTag={`Lekanger tekst & kode - ${servicesText?.title}`}
         ogImage={ogImageUrl}
+        ogUrl='https://www.lekanger.no/projects'
       />
       <Layout preview={false}>
         <Container>

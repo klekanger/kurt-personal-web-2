@@ -26,6 +26,7 @@ const AboutMe: NextPage<AboutMePageProps> = ({ aboutMeText }) => {
       <Meta
         titleTag={`Lekanger tekst & kode - ${aboutMeText?.title}`}
         ogImage={ogImageUrl}
+        ogUrl='https://www.lekanger.no/about-me'
       />
       <Layout preview={false}>
         <Container>
