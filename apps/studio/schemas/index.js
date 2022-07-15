@@ -12,16 +12,16 @@ import projectPortableText from './objects/projectPortableText'
 import simplePortableText from './objects/simplePortableText'
 
 export const schemaTypes = [
+  project, // These are the articles ("Artikler")
+  category, // Artikler - kategorier
+  webContent, // These are the web sub pages
+  webFrontpageContent, // Innhold til forsidemoduler
   bioPortableText,
   figure,
   projectPortableText,
   simplePortableText,
-  project, // These are the articles ("Artikler")
-  category,
   blockContent,
-  webContent, // These are the web sub pages
   webContentTextBox,
-  webFrontpageContent,
   menuElements,
   author,
 ]
