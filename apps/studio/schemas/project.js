@@ -16,11 +16,13 @@ export default {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      description: 'Legg til en «slug» for prosjektet.',
+      description: 'Alle artikler må ha en "slug" for å lage en unik URL.',
       options: {
         source: 'title',
         maxLength: 96,
+        slugify: (input) => input.toLowerCase().replace(/\s+/g, '-').slice(0, 200),
       },
+      validation: (Rule) => Rule.required().error('En slug kan se slik ut: "dette-er-en-artikkel"'),
     },
     {
       name: 'publishedAt',
@@ -41,15 +43,10 @@ export default {
     {
       name: 'author',
       title: 'Forfatter',
-      type: 'reference',
-      to: {type: 'author'},
-    },
-    {
-      name: 'members',
-      title: 'Forfatter (ikke lenger i bruk)',
       type: 'array',
-      of: [{type: 'projectMember'}],
+      of: [{type: 'reference', to: {type: 'author'}}],
     },
+
     {
       name: 'mainImage',
       title: 'Hovedbilde',

@@ -8,6 +8,12 @@
  *    type: 'simplePortableText'
  *  }
  */
+import React from 'react'
+
+const highlightRender = (props) => (
+  <span style={{backgroundColor: 'yellow', color: 'black'}}>{props.children}</span>
+)
+
 export default {
   title: 'Portable Text',
   name: 'simplePortableText',
@@ -27,13 +33,20 @@ export default {
         // Decorators usually describe a single property – e.g. a typographic
         // preference or highlighting by editors.
         decorators: [
-          {title: 'Strong', value: 'strong'},
-          {title: 'Emphasis', value: 'em'},
-          {title: 'Code', value: 'code'}
+          {title: 'Fet tekst', value: 'strong'},
+          {title: 'Kursiv', value: 'em'},
+          {
+            title: 'Uthev i farge',
+            value: 'mark',
+            blockEditor: {
+              icon: () => 'H',
+              render: highlightRender,
+            },
+          },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
-        annotations: []
-      }
-    }
-  ]
+        annotations: [],
+      },
+    },
+  ],
 }

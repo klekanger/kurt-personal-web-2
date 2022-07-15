@@ -1,33 +1,27 @@
+import author from './author'
 import blockContent from './blockContent'
 import category from './category'
-import author from './author'
+import bioPortableText from './objects/bioPortableText'
 import project from './project'
 import webContent from './webContent'
 import webContentTextBox from './webContentTextBox'
 import webFrontpageContent from './webFrontpageContent'
-import bioPortableText from './objects/bioPortableText'
-import projectMember from './objects/projectMember'
 import figure from './objects/figure'
-import person from './objects/person'
+import menuElements from './menuElements'
 import projectPortableText from './objects/projectPortableText'
 import simplePortableText from './objects/simplePortableText'
-import menuElements from './menuElements'
-// import code from './objects/code'
 
 export const schemaTypes = [
   bioPortableText,
   figure,
-  // code,
   projectPortableText,
   simplePortableText,
-  project,
-  author,
+  project, // These are the articles ("Artikler")
   category,
   blockContent,
-  projectMember,
-  person,
-  webContent,
+  webContent, // These are the web sub pages
   webContentTextBox,
   webFrontpageContent,
   menuElements,
+  author,
 ]

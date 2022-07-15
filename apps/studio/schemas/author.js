@@ -1,32 +1,23 @@
-import { MdPerson } from 'react-icons/md';
+import {MdPerson} from 'react-icons/md'
 
 export default {
   name: 'author',
-  title: 'Forfatter',
+  title: 'Forfattere',
   type: 'document',
   icon: MdPerson,
   fields: [
     {
       name: 'name',
       title: 'Navn',
-      type: 'string'
-    },
-    {
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'name',
-        maxLength: 96
-      }
+      type: 'string',
     },
     {
       name: 'image',
       title: 'Bilde',
       type: 'image',
       options: {
-        hotspot: true
-      }
+        hotspot: true,
+      },
     },
     {
       name: 'bio',
@@ -36,16 +27,16 @@ export default {
         {
           title: 'Block',
           type: 'block',
-          styles: [{ title: 'Normal', value: 'normal' }],
-          lists: []
-        }
-      ]
-    }
+          styles: [{title: 'Normal', value: 'normal'}],
+          lists: [],
+        },
+      ],
+    },
   ],
   preview: {
     select: {
       title: 'name',
-      media: 'image'
-    }
-  }
-};
+      media: 'image',
+    },
+  },
+}
