@@ -20,7 +20,7 @@ export default function ContactMe() {
             ...eller stikk innom for en kaffe!
           </p>
 
-          <div className='mt-8 grid grid-cols-1 gap-8 pb-8 text-brand-black md:grid-cols-2 lg:grid-cols-3 4xl:grid-cols-6'>
+          <div className='mt-8 grid grid-cols-1 gap-8 pb-8 text-brand-black md:grid-cols-2 lg:grid-cols-3'>
             <section className='hover:wiggle dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 backdrop-blur-md transition duration-500 hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm xl:px-4'>
               <a className='cursor-pointer' href='tel:+4740210140'>
                 <div className='flex justify-center text-4xl'>
@@ -52,7 +52,7 @@ export default function ContactMe() {
                 <div className='flex justify-center text-4xl'>
                   <FaGithub aria-hidden='true' />
                 </div>
-                <div className='text-center'>
+                <div className='break-words text-center'>
                   <h2 className='text-lg'>Github</h2>
                   <br />
                   github.com/klekanger
@@ -67,7 +67,7 @@ export default function ContactMe() {
                 <div className='flex justify-center text-4xl'>
                   <FaLinkedin aria-hidden='true' />
                 </div>
-                <div className='text-center'>
+                <div className='break-words text-center'>
                   <h2 className='text-lg'>LinkedIn</h2>
                   <br />
                   linkedin.com/in/lekanger/
@@ -79,7 +79,7 @@ export default function ContactMe() {
                 <div className='flex justify-center text-4xl'>
                   <FaTwitter aria-hidden='true' />
                 </div>
-                <div className='text-center'>
+                <div className='break-words text-center'>
                   <h2 className='text-lg'>Twitter</h2>
                   <br />
                   twitter.com/lekanger
@@ -94,7 +94,7 @@ export default function ContactMe() {
                 <div className='flex justify-center text-4xl'>
                   <FaFacebook aria-hidden='true' />
                 </div>
-                <div className='text-center'>
+                <div className='break-words text-center'>
                   <h2 className='text-lg'>Facebook</h2>
                   <br />
                   facebook.com/lekanger
