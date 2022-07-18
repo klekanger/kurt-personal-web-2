@@ -25,7 +25,7 @@ export default function Meta({
       <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
       <meta
         name='description'
-        content={`Innholdsprodusent med lang erfaring som journalist og redaktør. Utvikler i JavaScript, React og Next.js.`}
+        content={`Innholdsprodusent med lang erfaring som journalist og redaktør. Fullstackutvikler som behersker JavaScript/Node.js, React og Next.js.`}
       />
       <meta
         property='og:image'

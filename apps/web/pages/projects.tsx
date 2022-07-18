@@ -28,7 +28,7 @@ const Projects: NextPage<ProjectsProps> = ({
   return (
     <>
       <Meta
-        titleTag={`Lekanger tekst & kode - ${servicesText?.title}`}
+        titleTag={`${servicesText?.title}`}
         ogImage={ogImageUrl}
         ogUrl='https://www.lekanger.no/projects'
       />

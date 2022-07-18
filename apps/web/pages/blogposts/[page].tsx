@@ -34,7 +34,7 @@ const Blog: NextPage<BlogProps> = ({
   return (
     <>
       <Meta
-        titleTag={`Lekanger tekst & kode - siste blogginnlegg -  side ${page}`}
+        titleTag={`Siste blogginnlegg - side ${page}`}
         ogUrl={ogUrl}
       />
       <Layout preview={preview}>
