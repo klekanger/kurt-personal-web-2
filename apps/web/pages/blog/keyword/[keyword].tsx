@@ -23,7 +23,11 @@ const PostKeyword: NextPage<PostKeywordProps> = ({
 
   return (
     <>
-      <Meta titleTag={`Artikler med nøkkelord ${keyword}`} ogUrl={ogUrl} />
+      <Meta
+        titleTag={`Artikler om ${keyword}`}
+        ogUrl={ogUrl}
+        description={`Bloggposter tagget med nøkkelord ${keyword}`}
+      />
       <Layout preview={preview}>
         <Container>
           {router.isFallback ? (

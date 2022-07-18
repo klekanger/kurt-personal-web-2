@@ -36,6 +36,7 @@ const Blog: NextPage<BlogProps> = ({
       <Meta
         titleTag={`Siste blogginnlegg - side ${page}`}
         ogUrl={ogUrl}
+        description={`Siste blogginnlegg - side ${page}`}
       />
       <Layout preview={preview}>
         <Container>

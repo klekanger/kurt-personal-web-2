@@ -31,6 +31,7 @@ const Projects: NextPage<ProjectsProps> = ({
         titleTag={`${servicesText?.title}`}
         ogImage={ogImageUrl}
         ogUrl='https://www.lekanger.no/projects'
+        description='Utvalgte prosjekter - Lekanger tekst & kode'
       />
       <Layout preview={false}>
         <Container>

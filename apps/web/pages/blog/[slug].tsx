@@ -34,12 +34,17 @@ const Post: NextPage<PostProps> = ({
 
   const ogImageUrl =
     imageBuilder(post.mainImage?.asset).width(1200).height(630).url() || '#';
-
   const ogUrl = `https://www.lekanger.no/blog/${post.slug.current}`;
+  const description = post.excerpt ? post.excerpt[0]?.children[0]?.text : '';
 
   return (
     <>
-      <Meta titleTag={`${post?.title}`} ogImage={ogImageUrl} ogUrl={ogUrl} />
+      <Meta
+        titleTag={`${post?.title}`}
+        ogImage={ogImageUrl}
+        ogUrl={ogUrl}
+        description={description}
+      />
       <Layout preview={preview}>
         <Container>
           {router.isFallback ? (

@@ -5,10 +5,12 @@ export default function Meta({
   titleTag,
   ogImage,
   ogUrl,
+  description,
 }: {
   titleTag?: string;
   ogImage?: string;
   ogUrl?: string;
+  description?: string;
 }) {
   return (
     <Head>
@@ -25,7 +27,11 @@ export default function Meta({
       <link rel='alternate' type='application/rss+xml' href='/feed.xml' />
       <meta
         name='description'
-        content={`Innholdsprodusent med lang erfaring som journalist og redaktør. Fullstackutvikler som behersker JavaScript/Node.js, React og Next.js.`}
+        content={`${
+          description
+            ? description
+            : 'Tekstforfatter, innholdsprodusent, oversetter og utvikler. Javascript, React, Next.js, Gatsby.'
+        }`}
       />
       <meta
         property='og:image'
@@ -71,7 +77,11 @@ export default function Meta({
       />
       <meta
         property='og:description'
-        content='Tekstforfatter, innholdsprodusent, oversetter og utvikler. Javascript, React, Next.js, Gatsby.'
+        content={`${
+          description
+            ? description
+            : 'Tekstforfatter, innholdsprodusent, oversetter og utvikler. Javascript, React, Next.js, Gatsby.'
+        }`}
         key='ogdesc'
       />
       <meta property='og:type' content='website' key='ogtype' />

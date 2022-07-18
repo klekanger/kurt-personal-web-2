@@ -22,6 +22,7 @@ const PrivacyPage: NextPage<PrivacyPageProps> = ({ privacyText, allPosts }) => {
       <Meta
         titleTag={`${privacyText?.title}`}
         ogUrl='https://www.lekanger.no/privacy'
+        description='Cookies og personvern'
       />
       <Layout preview={false}>
         <Container>
