@@ -24,7 +24,7 @@ export default function Hero({ content }: HeroProps) {
                 <a className='btn btn-primary'>Om meg</a>
               </Link>
 
-              <Link href='/projects?ref=button_hero_Prosjekter'>
+              <Link href='/projects'>
                 <a className='btn btn-secondary'>Prosjekter</a>
               </Link>
             </div>
