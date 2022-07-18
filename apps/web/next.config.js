@@ -18,6 +18,11 @@ module.exports = {
         destination: '/blog/:slug*',
         permanent: true,
       },
+      {
+        source: '/archive',
+        destination: '/blogposts/1',
+        permanent: true,
+      },
     ];
   },
 };
