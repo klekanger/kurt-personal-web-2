@@ -15,6 +15,11 @@ class MyDocument extends Document {
             href='https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;1,400;1,600&family=Tenor+Sans&display=swap'
             rel='stylesheet'
           />
+          <script
+            defer
+            data-domain='lekanger.no'
+            src='https://plausible.io/js/plausible.js'
+          ></script>
         </Head>
         <body>
           <Main />
