@@ -20,7 +20,7 @@ export default function Hero({ content }: HeroProps) {
             <SimpleText text={content?.textBlocks[0]} />
 
             <div className='flex justify-around space-x-4 py-8 sm:px-32 md:justify-start md:px-0'>
-              <Link href='/about-me?button_hero_Om meg'>
+              <Link href='/about-me'>
                 <a className='btn btn-primary'>Om meg</a>
               </Link>
 
