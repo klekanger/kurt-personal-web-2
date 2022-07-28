@@ -6,9 +6,11 @@ export default function Custom404() {
     <Layout>
       <Container>
         <div className='text-center'>
-          <div className='pb-4 text-9xl'>🤯</div>
+          <div className='pb-4 text-8xl'>🤔</div>
           <h1>Siden ble ikke funnet (404)</h1>
-          <p className='pt-4'>Nå har du rotet det til for deg selv...</p>
+          <p className='pt-4'>
+            Nå har du virkelig rotet det til for deg selv...
+          </p>
         </div>
       </Container>
     </Layout>
