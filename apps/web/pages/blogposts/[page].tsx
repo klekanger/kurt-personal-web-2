@@ -34,7 +34,7 @@ const Blog: NextPage<BlogProps> = ({
   return (
     <>
       <Meta
-        titleTag={`Siste blogginnlegg - side ${page}`}
+        titleTag={`Siste blogginnlegg ${page === 1 ? '' : '- side ' + page}`}
         ogUrl={ogUrl}
         description={`Siste blogginnlegg - side ${page}`}
       />
@@ -47,7 +47,9 @@ const Blog: NextPage<BlogProps> = ({
               <>
                 <PostTitle>
                   <HeadingWithMarks
-                    heading={`Siste <mark>blogg&shy;poster</mark> - side&nbsp;${page}`}
+                    heading={`Siste <mark>blogg&shy;poster</mark> ${
+                      page === 1 ? '' : '- side ' + page
+                    }`}
                   />
                 </PostTitle>
                 {/* Show featured blogposts only on first page */}
