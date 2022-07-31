@@ -7,6 +7,7 @@ import Container from '../../components/UI/container';
 import Layout from '../../components/UI/layout';
 import PostArticle from '../../components/UI/post-article';
 import PostTitle from '../../components/UI/post-title';
+import { usePreviewSubscription } from '../../lib/sanity';
 import {
   getAllPostsWithSlug,
   getPostAndMorePosts,
@@ -16,12 +17,7 @@ import { formatDate } from '../../lib/format-date';
 import { PostProps } from '../../types/interfaces';
 import { imageBuilder } from '../../lib/sanity';
 
-const Post: NextPage<PostProps> = ({
-  post,
-  //  morePosts,
-  relatedPosts,
-  preview,
-}) => {
+const Post: NextPage<PostProps> = ({ post, relatedPosts, preview }) => {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
