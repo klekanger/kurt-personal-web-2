@@ -43,6 +43,7 @@ export async function getMenuItems() {
 }
 
 export async function getPreviewPostBySlug(slug: string) {
+  console.log('slug is ', slug);
   const data = await getClient(true).fetch(
     groq`*[_type == "project" && slug.current == $slug] | order(_createdAt desc){
       ${postFields}
@@ -50,6 +51,7 @@ export async function getPreviewPostBySlug(slug: string) {
     }`,
     { slug }
   );
+
   return data[0];
 }
 
