@@ -66,7 +66,10 @@ export default function BlogPostList({ posts }: { posts: Post[] }) {
               </Link>
               <div className='md:col-span-7 md:pr-8 lg:col-span-6'>
                 <Link href={`/blog/${post?.slug?.current}`} passHref>
-                  <h2 className='m4-4 transform cursor-pointer pt-0 pb-2 text-2xl text-brand-main2 transition duration-500 hover:text-brand-secondary2 dark:text-brand-dark-main2 dark:hover:text-brand-dark-secondary2 md:mt-0 '>
+                  <h2
+                    className='m4-4 transform cursor-pointer pt-0 pb-2 text-2xl text-brand-main2 transition duration-500 hover:text-brand-secondary2 dark:text-brand-dark-main2 dark:hover:text-brand-dark-secondary2 md:mt-0 '
+                    tabIndex={0}
+                  >
                     {post?.title}
                   </h2>
                 </Link>
