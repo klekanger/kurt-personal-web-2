@@ -1,8 +1,5 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
 import { BLURDATA } from '../../lib/blurdata';
 import { formatDate } from '../../lib/format-date';
 import { imageBuilder } from '../../lib/sanity';
@@ -11,9 +8,12 @@ import DateAndAuthor from './date-and-author';
 import Hashtags from './hashtags';
 
 export default function BlogPostList({ posts }: { posts: Post[] }) {
-  gsap.registerPlugin(ScrollTrigger);
-  const revealRefs = useRef([] as HTMLDivElement[]);
-  revealRefs.current = [];
+  /*
+  // gsap.registerPlugin(ScrollTrigger);
+  // const revealRefs = useRef([] as HTMLDivElement[]);
+  // revealRefs.current = [];
+  
+ // Drop scroll effects on this page for now. We'll see if we want them later.
 
   const addToRefs = (el: HTMLDivElement) => {
     revealRefs.current.push(el);
@@ -32,7 +32,7 @@ export default function BlogPostList({ posts }: { posts: Post[] }) {
         },
       });
     });
-  }, []);
+  }, []); */
 
   return (
     <div className='mt-8 space-y-8'>
@@ -43,7 +43,7 @@ export default function BlogPostList({ posts }: { posts: Post[] }) {
         });
 
         return (
-          <div key={post._id} ref={addToRefs}>
+          <div key={post._id}>
             <div className=' grid-cols-12 gap-2 pb-8 md:grid lg:gap-8'>
               <Link href={`/blog/${post?.slug?.current}`} passHref>
                 <div className=' self-top order-last cursor-pointer rounded-md md:col-span-5 lg:col-span-6'>
