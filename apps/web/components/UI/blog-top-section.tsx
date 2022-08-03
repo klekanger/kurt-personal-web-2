@@ -17,7 +17,7 @@ export default function BlogTopSection({ posts }: { posts: Post[] }) {
           <Link href={`/blog/${firstPost?.slug?.current}`} passHref>
             <div className='relative aspect-[16/10]'>
               <Image
-                className='rounded-md md:cursor-pointer'
+                className='rounded-md'
                 layout='fill'
                 objectFit='cover'
                 src={
