@@ -42,7 +42,7 @@
 }
 
 .markdown p code {
-  @apply bg-gray-200 px-0.5 font-mono;
+  @apply bg-gray-200 px-0.5 font-mono ;
 }
 
 :global(.dark) .markdown p code {
@@ -53,13 +53,15 @@
   @apply list-disc;
 }
 
+
 .markdown ul li {
-  @apply ml-12 mb-2;
+  @apply ml-6 md:ml-10 mb-2;
 }
 
 .markdown a {
   @apply text-brand-link hover:text-brand-linkHover;
 }
+
 
 :global(.dark) .markdown a {
   @apply text-brand-dark-link;

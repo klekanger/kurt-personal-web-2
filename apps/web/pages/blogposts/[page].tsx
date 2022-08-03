@@ -47,23 +47,21 @@ const Blog: NextPage<BlogProps> = ({
               <>
                 <PostTitle>
                   <HeadingWithMarks
-                    heading={`Siste <mark>blogg&shy;poster</mark> - side&nbsp;${page}`}
+                    heading={`Siste <mark>blogg&shy;poster</mark>${
+                      page === 1 ? '' : ` - side ${page}`
+                    }`}
                   />
                 </PostTitle>
-                {/* Show featured blogposts only on first page */}
+                {/* Show featured blogpost only on first page */}
                 {page === 1 && <BlogTopSection posts={firstPosts} />}{' '}
                 <BlogPostList posts={restOfThePosts} />
               </>
             )}
-
-            <div className='mt-8'>
-              <Pagination
-                numberOfPages={numberOfPages}
-                startPage={Number(page)}
-              />
-            </div>
           </article>
         </Container>
+        <div className='mt-4 md:mt-16'>
+          <Pagination numberOfPages={numberOfPages} startPage={Number(page)} />
+        </div>
       </Layout>
     </>
   );
@@ -82,14 +80,14 @@ export const getStaticProps: GetStaticProps = async ({
   let firstPosts: Post[] = [];
   if (page === 1) {
     firstPosts = await getAllPostsForHome({
-      numberOfPosts: 3,
+      numberOfPosts: 1,
       offset: 0,
     });
   }
 
   const restOfThePosts = await getAllPostsForHome({
     numberOfPosts: POSTS_PER_PAGE,
-    offset: 3 + (page - 1) * POSTS_PER_PAGE,
+    offset: 1 + (page - 1) * POSTS_PER_PAGE,
   });
 
   const numberOfPosts = await getNumberOfPosts();

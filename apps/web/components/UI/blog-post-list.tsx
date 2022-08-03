@@ -44,7 +44,7 @@ export default function BlogPostList({ posts }: { posts: Post[] }) {
 
         return (
           <div key={post._id}>
-            <div className=' grid-cols-12 gap-2 pb-8 md:grid lg:gap-8'>
+            <div className=' grid-cols-12 gap-2 pb-2 md:grid md:pb-8 lg:gap-8'>
               <Link href={`/blog/${post?.slug?.current}`} passHref>
                 <div className=' self-top order-last cursor-pointer rounded-md md:col-span-5 lg:col-span-6'>
                   <Image
