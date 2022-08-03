@@ -12,7 +12,7 @@ export default function Hero({ content }: HeroProps) {
   return (
     <article className='bg-brand-main1-10 dark:bg-brand-dark-main1-10'>
       <Container>
-        <div className='default-spacing flex justify-between'>
+        <div className='default-spacing flex flex-col-reverse justify-between pb-2 md:flex-row md:pb-0'>
           <section className='w-full px-2 pt-8 md:w-7/12 md:pb-16 md:pt-16'>
             <div className='pb-4 md:pb-8'>
               <HeadingWithMarks heading={headingToRender} />
@@ -29,7 +29,7 @@ export default function Hero({ content }: HeroProps) {
               </Link>
             </div>
           </section>
-          <div className='relative hidden md:block md:w-5/12'>
+          <div className='relative mt-8 aspect-square w-5/6 self-center md:relative md:m-0 md:mt-0 md:block md:w-5/12'>
             <Image
               objectFit='cover'
               src={kurtPortrait}
