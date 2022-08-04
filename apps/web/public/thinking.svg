@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:cc="http://creativecommons.org/ns#"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    xmlns:svg="http://www.w3.org/2000/svg"
+    xmlns:ns1="http://sozi.baierouge.fr"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    id="svg3884"
+    sodipodi:docname="Nouveau document 5"
+    viewBox="0 0 150 134.52"
+    version="1.1"
+    inkscape:version="0.47pre4 r22446"
+  >
+  <defs
+      id="defs3886"
+    >
+    <filter
+        id="filter3807"
+        width="1.2248"
+        y="-.12868"
+        x="-.11242"
+        height="1.2574"
+        color-interpolation-filters="sRGB"
+        inkscape:collect="always"
+      >
+      <feGaussianBlur
+          id="feGaussianBlur3809"
+          stdDeviation="1.4999165"
+          inkscape:collect="always"
+      />
+    </filter
+    >
+  </defs
+  >
+  <sodipodi:namedview
+      id="base"
+      bordercolor="#666666"
+      inkscape:pageshadow="2"
+      inkscape:window-y="24"
+      pagecolor="#ffffff"
+      inkscape:window-height="693"
+      inkscape:window-maximized="1"
+      inkscape:zoom="2.8"
+      inkscape:window-x="0"
+      showgrid="false"
+      borderopacity="1.0"
+      inkscape:current-layer="layer1"
+      inkscape:cx="122.1047"
+      inkscape:cy="64.620527"
+      inkscape:window-width="1366"
+      inkscape:pageopacity="0.0"
+      inkscape:document-units="px"
+  />
+  <g
+      id="layer1"
+      inkscape:label="Calque 1"
+      inkscape:groupmode="layer"
+      transform="translate(-260.71 -430.46)"
+    >
+    <g
+        id="g3811"
+        transform="matrix(3.8244 0 0 3.8244 -577.84 -251.34)"
+      >
+      <path
+          id="path3633-6-4"
+          style="filter:url(#filter3807);fill:#7a7a7a"
+          d="m235.8 181.88c-1.7066 0.0803-3.1692 1.002-4.375 3.3438-3.8801-1.4964-6.4668 0.81929-5.875 4.5-2.4876 1.2081-3.632 4.9801 2 6.125-0.6413 1.9221 0.26638 3.3279 2.625 4.25 0.56657 1.8185 1.4093 3.195 3.625 2.375 2.0806 1.9332 4.5028 1.8168 7.25-0.25 2.6576 0.82051 5.3059 0.7102 7.125-2.625 1.8772-0.0869 4.8647 0.11903 4.375-4 1.7299-1.1414 3.5542-2.695 1.25-5 0.17155-2.6497-0.64958-5.572-4.25-5.75-2.4677-3.379-5.5334-3.4378-9.375-1.875-1.5629-0.7155-3.0476-1.1562-4.375-1.0938zm-6.6875 20.969c-0.93198 0-1.6875 0.55964-1.6875 1.25s0.75552 1.25 1.6875 1.25 1.6875-0.55964 1.6875-1.25-0.75552-1.25-1.6875-1.25zm-2.6875 3.25c-0.65584 0-1.1875 0.40556-1.1875 0.875s0.53166 0.84375 1.1875 0.84375 1.1875-0.37431 1.1875-0.84375-0.53166-0.875-1.1875-0.875zm-3.0312 3.0938c-0.30376 0-0.53125 0.15597-0.53125 0.34375s0.22749 0.3125 0.53125 0.3125 0.5625-0.12472 0.5625-0.3125-0.25874-0.34375-0.5625-0.34375z"
+      />
+      <path
+          id="path3633-6"
+          style="stroke:#000000;stroke-width:.26148px;fill:#ffffff"
+          d="m235.94 179.38c-1.7066 0.0803-3.1692 1.002-4.375 3.3438-3.8801-1.4964-6.4668 0.81929-5.875 4.5-2.4876 1.2081-3.632 4.9801 2 6.125-0.6413 1.9221 0.26638 3.3279 2.625 4.25 0.56657 1.8185 1.4093 3.195 3.625 2.375 2.0806 1.9332 4.5028 1.8168 7.25-0.25 2.6576 0.82051 5.3059 0.7102 7.125-2.625 1.8772-0.0869 4.8647 0.11903 4.375-4 1.7299-1.1414 3.5542-2.695 1.25-5 0.17155-2.6497-0.64958-5.572-4.25-5.75-2.4677-3.379-5.5334-3.4378-9.375-1.875-1.5629-0.7155-3.0476-1.1562-4.375-1.0938zm-6.6875 20.969c-0.93198 0-1.6875 0.55964-1.6875 1.25s0.75552 1.25 1.6875 1.25 1.6875-0.55964 1.6875-1.25-0.75552-1.25-1.6875-1.25zm-2.6875 3.25c-0.65584 0-1.1875 0.40556-1.1875 0.875s0.53166 0.84375 1.1875 0.84375 1.1875-0.37431 1.1875-0.84375-0.53166-0.875-1.1875-0.875zm-3.0312 3.0938c-0.30376 0-0.53125 0.15597-0.53125 0.34375s0.22749 0.3125 0.53125 0.3125 0.5625-0.12472 0.5625-0.3125-0.25874-0.34375-0.5625-0.34375z"
+      />
+    </g
+    >
+  </g
+  >
+  <metadata
+    >
+    <rdf:RDF
+      >
+      <cc:Work
+        >
+        <dc:format
+          >image/svg+xml</dc:format
+        >
+        <dc:type
+            rdf:resource="http://purl.org/dc/dcmitype/StillImage"
+        />
+        <cc:license
+            rdf:resource="http://creativecommons.org/licenses/publicdomain/"
+        />
+        <dc:publisher
+          >
+          <cc:Agent
+              rdf:about="http://openclipart.org/"
+            >
+            <dc:title
+              >Openclipart</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:publisher
+        >
+        <dc:title
+          >Speech bubble</dc:title
+        >
+        <dc:date
+          >2010-04-06T21:00:46</dc:date
+        >
+        <dc:description
+          >speech bubble</dc:description
+        >
+        <dc:source
+          >https://openclipart.org/detail/38593/speech-bubble-by-pascallapalme</dc:source
+        >
+        <dc:creator
+          >
+          <cc:Agent
+            >
+            <dc:title
+              >pascallapalme</dc:title
+            >
+          </cc:Agent
+          >
+        </dc:creator
+        >
+        <dc:subject
+          >
+          <rdf:Bag
+            >
+            <rdf:li
+              >cartoon</rdf:li
+            >
+            <rdf:li
+              >speech bubble</rdf:li
+            >
+          </rdf:Bag
+          >
+        </dc:subject
+        >
+      </cc:Work
+      >
+      <cc:License
+          rdf:about="http://creativecommons.org/licenses/publicdomain/"
+        >
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Reproduction"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#Distribution"
+        />
+        <cc:permits
+            rdf:resource="http://creativecommons.org/ns#DerivativeWorks"
+        />
+      </cc:License
+      >
+    </rdf:RDF
+    >
+  </metadata
+  >
+</svg
+>

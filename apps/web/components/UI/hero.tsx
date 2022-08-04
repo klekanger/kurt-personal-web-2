@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import kurtPortrait from '../../public/kurt-kvadratisk-transparent.png';
+// import kurtPortrait from '../../public/kurt-kvadratisk-transparent.png';
+import thinking from '../../public/thinking.svg';
+import kurtPortrait from '../../public/kurt-wide-transparent-2.webp';
 import { HeroProps } from '../../types/interfaces';
 import HeadingWithMarks from '../content-renderers/heading-with-marks';
 import SimpleText from '../content-renderers/simple-text';
@@ -29,16 +31,19 @@ export default function Hero({ content }: HeroProps) {
               </Link>
             </div>
           </section>
-          <div className='relative mt-8 aspect-square w-5/6 self-center md:relative md:m-0 md:mt-0 md:block md:w-5/12'>
+          <div className='relative mt-8 w-full self-center md:relative md:m-0 md:mt-0 md:block md:w-5/12'>
             <Image
               objectFit='cover'
               src={kurtPortrait}
-              layout='fill'
+              layout='intrinsic'
               alt='Kurt Lekanger'
               priority={true}
               placeholder='blur'
               className='rounded-b-md'
             />
+            <div className='thought-bubble absolute top-0 right-0 h-1/2 w-1/2 opacity-40'>
+              <Image src={thinking} alt='tenkeboble' layout='fill' />
+            </div>
           </div>
         </div>
       </Container>
