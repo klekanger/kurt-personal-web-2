@@ -13,7 +13,7 @@ export default function Hero({ content }: HeroProps) {
     <article className='bg-brand-main1-10 dark:bg-brand-dark-main1-10'>
       <Container>
         <div className='default-spacing flex flex-col-reverse justify-between pb-2 md:flex-row md:pb-0'>
-          <section className='w-full px-2 pt-8 md:w-7/12 md:pb-16 md:pt-16'>
+          <section className='w-full px-2 pt-4 md:w-7/12 md:pb-16 md:pt-16'>
             <div className='pb-4 md:pb-8'>
               <HeadingWithMarks heading={headingToRender} />
             </div>
@@ -29,7 +29,7 @@ export default function Hero({ content }: HeroProps) {
               </Link>
             </div>
           </section>
-          <div className='relative mt-8 aspect-square w-5/6 self-center md:relative md:m-0 md:mt-0 md:block md:w-5/12'>
+          <div className='relative mt-2 aspect-[16/10] w-full self-center rounded-md bg-brand-main1-30 px-4 md:relative md:m-0 md:mt-0 md:block md:aspect-square md:w-5/12 md:bg-inherit'>
             <Image
               objectFit='cover'
               src={kurtPortrait}
