@@ -12,7 +12,7 @@ export default function ContactMe() {
   return (
     <div className='default-spacing bg-brand-main1-10 dark:bg-brand-dark-main1-10'>
       <Container>
-        <article className='my-8 flex flex-col items-center justify-center bg-[url(/images/coffee-transparent.png)] bg-contain bg-right bg-no-repeat text-sm md:my-16'>
+        <article className='my-8 flex flex-col items-center justify-center bg-[url(/images/coffee-transparent.webp)] bg-contain bg-right bg-no-repeat text-sm md:my-16'>
           <h1 className='pb-8 text-center font-extrabold text-brand-secondary2 dark:text-brand-dark-secondary2 '>
             Her finner du meg
           </h1>
