@@ -1,5 +1,5 @@
 import groq from 'groq';
-import client, { previewClient } from './sanity';
+import { client, previewClient } from './sanity';
 import { Post } from '../types/interfaces';
 
 const getUniquePosts = (posts: Post[]) => {

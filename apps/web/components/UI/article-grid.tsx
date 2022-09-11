@@ -33,7 +33,7 @@ export default function ArticleGrid({ posts }: { posts: Post[] }) {
               </Link>
 
               <Link href={`/blog/${post?.slug?.current}`} passHref>
-                <h2 className='pb-2 text-2xl text-brand-main2 group-hover:text-brand-secondary2'>
+                <h2 className='cursor-pointer pb-2 text-2xl text-brand-main2 group-hover:text-brand-secondary2'>
                   {post?.title}
                 </h2>
               </Link>

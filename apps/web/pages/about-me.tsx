@@ -50,11 +50,7 @@ const AboutMe: NextPage<AboutMePageProps> = ({ aboutMeText }) => {
 
 export default AboutMe;
 
-export const getStaticProps: GetStaticProps = async (
-  {
-    /* preview = false */
-  }
-) => {
+export const getStaticProps: GetStaticProps = async ({ preview = false }) => {
   const aboutMeText = await getAboutMePageText();
 
   return {

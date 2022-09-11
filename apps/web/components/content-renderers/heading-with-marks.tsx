@@ -28,8 +28,9 @@ export default function HeadingWithMarks({
   }
 
   return (
-    <h1 className='text-3xl font-extrabold tracking-tight text-brand-main2 dark:text-brand-dark-main2 sm:text-4xl md:text-5xl'>
-      <div dangerouslySetInnerHTML={{ __html: headlineWithHighlights }} />
-    </h1>
+    <h1
+      dangerouslySetInnerHTML={{ __html: headlineWithHighlights }}
+      className='text-3xl font-extrabold tracking-tight text-brand-main2 dark:text-brand-dark-main2 sm:text-4xl md:text-5xl'
+    ></h1>
   );
 }

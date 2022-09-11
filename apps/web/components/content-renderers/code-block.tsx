@@ -19,6 +19,7 @@ const CodeBlock = (props: CodeBlockProps) => {
     >
       <SyntaxHighlighter
         language={language}
+        showLineNumbers
         style={resolvedTheme === 'dark' ? atomOneDark : atomOneLight}
       >
         {codeToShow}
