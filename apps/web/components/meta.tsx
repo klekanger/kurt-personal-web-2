@@ -30,7 +30,7 @@ export default function Meta({
         content={`${
           description
             ? description
-            : 'Tekstforfatter, innholdsprodusent, oversetter og utvikler. Javascript, React, Next.js, Gatsby.'
+            : 'Mer enn 30 års erfaring som journalist, redaktør og innholdsprodusent. Koder i JavaScript, TypeScript og React – fordi det er gøy.'
         }`}
       />
       <meta
@@ -45,7 +45,7 @@ export default function Meta({
         {`${
           titleTag
             ? titleTag
-            : 'Lekanger tekst & kode - tekstforfatter, innholdsprodusent og utvikler'
+            : 'Kurt Lekanger - journalist og fullstack hobbyutvikler'
         }`}
       </title>
 
@@ -61,11 +61,7 @@ export default function Meta({
       />
       <meta property='og:locale' content='nb-NO' key='oglocale' />
 
-      <meta
-        property='og:site_name'
-        content='Lekanger tekst & kode'
-        key='ogsitename'
-      />
+      <meta property='og:site_name' content='Kurt Lekanger' key='ogsitename' />
       <meta
         property='og:title'
         content={`${

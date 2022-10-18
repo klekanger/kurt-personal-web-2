@@ -137,7 +137,7 @@ export default function Navbar() {
               <Image
                 className='cursor-pointer'
                 src={resolvedTheme === 'light' ? companyLogo : companyDarkLogo}
-                alt='Lekanger tekst og kode'
+                alt='Kurt Lekanger-logo'
               />
             </a>
           </Link>
