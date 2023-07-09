@@ -1,14 +1,11 @@
 <!DOCTYPE html><html lang="en">
 <!--
-This file is auto-generated on "sanity start".
-Modifications to this file is automatically discarded.
-
-To customize the rendering of this file, see
-https://docs.sanity.io/help/custom-document-component
+This file is auto-generated from "sanity dev".
+Modifications to this file are automatically discarded.
 -->
 <head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><meta name="robots" content="noindex"/><meta name="referrer" content="same-origin"/><link rel="icon" href="/static/favicon.ico" sizes="any"/><link rel="icon" href="/static/favicon.svg" type="image/svg+xml"/><link rel="apple-touch-icon" href="/static/apple-touch-icon.png"/><link rel="manifest" href="/static/manifest.webmanifest"/><title>Sanity Studio</title><script>
 ;(function () {
-  var caughtErrors = []
+  var _caughtErrors = []
 
   var errorChannel = (function () {
     var subscribers = []
@@ -34,16 +31,28 @@ https://docs.sanity.io/help/custom-document-component
     return {publish, subscribe, subscribers}
   })()
 
-  window.__sanityErrorChannel = errorChannel
+  // NOTE: Store the error channel instance in the global scope so that the Studio application can
+  // access it and subscribe to errors.
+  window.__sanityErrorChannel = {
+    subscribe: errorChannel.subscribe,
+  }
+
+  function _nextTick(callback) {
+    setTimeout(callback, 0)
+  }
 
   function _handleError(error, params) {
-    if (errorChannel.subscribers.length) {
-      errorChannel.publish({error, params})
-    } else {
-      console.error(error)
+    _nextTick(function () {
+      // - If there are error channel subscribers, then we notify them (no console error).
+      // - If there are no subscribers, then we log the error to the console and render the error overlay.
+      if (errorChannel.subscribers.length) {
+        errorChannel.publish({error, params})
+      } else {
+        console.error(error)
 
-      _renderErrorOverlay(error, params)
-    }
+        _renderErrorOverlay(error, params)
+      }
+    })
   }
 
   var ERROR_BOX_STYLE = [
@@ -106,11 +115,17 @@ https://docs.sanity.io/help/custom-document-component
     document.body.appendChild(errorElement)
   }
 
-  window.onerror = function (event, source, lineno, colno, error) {
-    setTimeout(function () {
-      if (caughtErrors.indexOf(error) !== -1) return
+  // NOTE:
+  // Yes – we're attaching 2 error listeners below 👀
+  // This is because React makes the same error throw twice (in development mode).
+  // See: https://github.com/facebook/react/issues/10384
 
-      caughtErrors.push(error)
+  // Error listener #1
+  window.onerror = function (event, source, lineno, colno, error) {
+    _nextTick(function () {
+      if (_caughtErrors.indexOf(error) !== -1) return
+
+      _caughtErrors.push(error)
 
       _handleError(error, {
         event,
@@ -119,20 +134,23 @@ https://docs.sanity.io/help/custom-document-component
         source,
       })
 
-      setTimeout(function () {
-        var idx = caughtErrors.indexOf(error)
+      _nextTick(function () {
+        var idx = _caughtErrors.indexOf(error)
 
-        if (idx > -1) caughtErrors.splice(idx, 1)
-      }, 0)
-    }, 0)
+        if (idx > -1) _caughtErrors.splice(idx, 1)
+      })
+    })
 
+    // IMPORTANT: this callback must return `true` to prevent the error from being rendered in
+    // the browser’s console.
     return true
   }
 
+  // Error listener #2
   window.addEventListener('error', function (event) {
-    if (caughtErrors.indexOf(event.error) !== -1) return true
+    if (_caughtErrors.indexOf(event.error) !== -1) return true
 
-    caughtErrors.push(event.error)
+    _caughtErrors.push(event.error)
 
     _handleError(event.error, {
       event,
@@ -140,13 +158,13 @@ https://docs.sanity.io/help/custom-document-component
       colno: event.colno,
     })
 
-    setTimeout(function () {
-      setTimeout(function () {
-        var idx = caughtErrors.indexOf(event.error)
+    _nextTick(function () {
+      _nextTick(function () {
+        var idx = _caughtErrors.indexOf(event.error)
 
-        if (idx > -1) caughtErrors.splice(idx, 1)
-      }, 0)
-    }, 0)
+        if (idx > -1) _caughtErrors.splice(idx, 1)
+      })
+    })
 
     return true
   })
@@ -164,4 +182,22 @@ https://docs.sanity.io/help/custom-document-component
     margin: 0;
     -webkit-font-smoothing: antialiased;
   }
-</style></head><body><div id="sanity"></div><script type="module" src="/.sanity/runtime/app.js"></script></body></html>
+</style></head><body><div id="sanity"></div><script type="module" src="/.sanity/runtime/app.js"></script><noscript><div class="sanity-app-no-js__root"><div class="sanity-app-no-js__content"><style type="text/css">
+.sanity-app-no-js__root {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+}
+
+.sanity-app-no-js__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: helvetica, arial, sans-serif;
+}
+</style><h1>JavaScript disabled</h1><p>Please <a href="https://www.enable-javascript.com/">enable JavaScript</a> in your browser and reload the page to proceed.</p></div></div></noscript></body></html>

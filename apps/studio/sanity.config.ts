@@ -1,4 +1,4 @@
-import {createConfig} from 'sanity'
+import {defineConfig} from 'sanity'
 import {
   dashboardTool,
   projectInfoWidget,
@@ -11,10 +11,8 @@ import {codeInput} from '@sanity/code-input'
 
 const DATASET = 'production'
 
-export default createConfig({
-  name: 'default',
+export default defineConfig({
   title: `Lekanger.no [dataset: ${DATASET}]`,
-
   projectId: 'ajget05d',
   dataset: DATASET,
 
