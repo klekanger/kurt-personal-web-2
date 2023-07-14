@@ -26,7 +26,8 @@ export default function SearchResultsBox({
                 className='md:text-md block transform transition duration-100 hover:text-brand-main2 hover:dark:text-brand-dark-main2 sm:text-base'
               >
                 <div>
-                  <MdArticle className='mr-2 inline' /> {result.title}
+                  <MdArticle className='mr-2 inline' />
+                  <span className='cursor-pointer'>{result.title}</span>
                 </div>
               </Link>
             ))}
