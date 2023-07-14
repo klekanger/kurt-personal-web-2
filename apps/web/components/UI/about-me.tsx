@@ -62,7 +62,9 @@ export default function AboutMe({ content }: { content: AboutMeProps }) {
                   <SimpleText text={content?.textBlocks[1]} />
                   <br />
                   <Link href='/about-me' className='read-more'>
-                    Les mer...
+                    <div className='cursor-pointer hover:text-brand-linkHover dark:hover:text-brand-dark-main1'>
+                      Les mer...
+                    </div>
                   </Link>
                 </div>
               </div>

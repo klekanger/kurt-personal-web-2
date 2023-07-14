@@ -57,11 +57,10 @@ export default function FeaturedBlogPosts({ content }: { content: Post[] }) {
       </div>
 
       <div className='flex justify-end pr-4'>
-        <Link
-          href='/blogposts/1'
-          className='dark:highlight-white-5  m-2 rounded-md border border-transparent bg-brand-secondary1-70 py-1 px-2 text-sm text-brand-black shadow-md shadow-brand-main1-70 transition duration-500 ease-in-out hover:bg-brand-secondary1/50 hover:text-brand-black/70 hover:shadow-brand-main1/50 dark:bg-brand-dark-secondary1-70 '
-        >
-          Se alle blogginnlegg ›
+        <Link href='/blogposts/1'>
+          <div className='dark:highlight-white-5  m-2 rounded-md border border-transparent bg-brand-secondary1-70 py-1 px-2 text-sm text-brand-black shadow-md shadow-brand-main1-70 transition duration-500 ease-in-out hover:bg-brand-secondary1/50 hover:text-brand-black/70 hover:shadow-brand-main1/50 dark:bg-brand-dark-secondary1-70 cursor-pointer'>
+            Se alle blogginnlegg ›
+          </div>
         </Link>
       </div>
     </Container>

@@ -70,11 +70,10 @@ const Post: NextPage<PostProps> = ({
                     {relatedPosts.map((post) => {
                       return (
                         <li key={post._id} className='list-inside list-disc'>
-                          <Link
-                            href={`/blog/${post?.slug?.current}`}
-                            className='transform transition duration-100 hover:text-brand-main2 hover:dark:text-brand-dark-main2'
-                          >
-                            {post?.title}
+                          <Link href={`/blog/${post?.slug?.current}`}>
+                            <span className='cursor-pointer transform transition duration-100 hover:text-brand-main2 hover:dark:text-brand-dark-main2'>
+                              {post?.title}
+                            </span>
                           </Link>
                         </li>
                       );

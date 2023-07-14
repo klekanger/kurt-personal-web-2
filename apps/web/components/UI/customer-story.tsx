@@ -40,9 +40,9 @@ export default function CustomerStory({
             </div>
             <br />
             <Link href='/projects' className='read-more'>
-              
+              <div className='cursor-pointer hover:text-brand-linkHover dark:hover:text-brand-dark-main1'>
                 Les mer om dette og flere prosjekter her »
-              
+              </div>
             </Link>
           </div>
           <div className='relative my-auto h-80 w-full'>
