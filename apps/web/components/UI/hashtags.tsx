@@ -3,7 +3,7 @@ import { HashtagsProps } from '../../types/interfaces';
 
 export default function Hashtags({ keywords = [] }: HashtagsProps) {
   if (!Array.isArray(keywords)) {
-    console.error('Keywords prop must be an array');
+    console.error('[hashtags.tsx] Warning: Keywords prop must be an array');
     return null;
   }
 
