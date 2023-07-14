@@ -23,16 +23,17 @@ export default function SearchResultsBox({
                 href={`/blog/${result.slug.current}`}
                 passHref
                 key={result._id}
+                className='md:text-md block transform transition duration-100 hover:text-brand-main2 hover:dark:text-brand-dark-main2 sm:text-base'
               >
-                <a className='md:text-md block transform transition duration-100 hover:text-brand-main2 hover:dark:text-brand-dark-main2 sm:text-base'>
+                <div>
                   <MdArticle className='mr-2 inline' /> {result.title}
-                </a>
+                </div>
               </Link>
             ))}
           </div>
           <div className='pt-8 text-brand-secondary2  dark:text-brand-dark-secondary2 '>
-            <Link href='/blogposts/1'>
-              <a className='read-more'>Gå til blogg-arkiv »</a>
+            <Link href='/blogposts/1' className='read-more'>
+              Gå til blogg-arkiv »
             </Link>
           </div>
         </div>

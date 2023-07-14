@@ -17,30 +17,30 @@ export default function FeaturedBlogPosts({ content }: { content: Post[] }) {
             <div className='relative' key={post._id}>
               <div className='relative aspect-[4/3] w-full rounded-lg'>
                 <Link href={`/blog/${post.slug.current}`}>
-                  <Image
-                    className='cursor-pointer rounded-lg'
-                    layout='fill'
-                    objectFit='cover'
-                    src={
-                      imageBuilder(post?.mainImage)
-                        .width(800)
-                        .height(450)
-                        .url() || '#'
-                    }
-                    alt={post?.mainImage?.alt}
-                  />
+                  <div>
+                    <Image
+                      className='cursor-pointer rounded-lg'
+                      layout='fill'
+                      objectFit='cover'
+                      src={
+                        imageBuilder(post?.mainImage)
+                          .width(800)
+                          .height(450)
+                          .url() || '#'
+                      }
+                      alt={post?.mainImage?.alt}
+                    />
+                  </div>
                 </Link>
               </div>
 
               <div className='left-0 bottom-0 w-full transform rounded-b-lg px-0 py-0 duration-500 hover:text-brand-secondary1 md:absolute md:bg-brand-black/60 md:bg-gradient-to-t md:px-6 md:pb-2  md:text-brand-white md:shadow-lg md:backdrop-blur-lg'>
                 <Link href={`/blog/${post.slug.current}`}>
-                  <a>
-                    <h2 className='mb:pb-0 transform cursor-pointer pb-2 text-xl text-brand-main2 transition duration-500 hover:text-brand-secondary2 dark:text-brand-dark-main2 dark:hover:text-brand-dark-secondary1 md:mt-4 md:text-brand-white md:hover:text-brand-secondary1 md:dark:text-brand-dark-main1 lg:text-2xl'>
-                      {post.title.length > 90
-                        ? post.title.slice(0, 90).concat('[...]')
-                        : post.title}
-                    </h2>
-                  </a>
+                  <h2 className='mb:pb-0 transform cursor-pointer pb-2 text-xl text-brand-main2 transition duration-500 hover:text-brand-secondary2 dark:text-brand-dark-main2 dark:hover:text-brand-dark-secondary1 md:mt-4 md:text-brand-white md:hover:text-brand-secondary1 md:dark:text-brand-dark-main1 lg:text-2xl'>
+                    {post.title.length > 90
+                      ? post.title.slice(0, 90).concat('[...]')
+                      : post.title}
+                  </h2>
                 </Link>
                 <p className='mt-2 text-brand-black dark:text-brand-dark-white md:hidden md:text-brand-dark-white'>
                   {post.excerpt &&
@@ -57,10 +57,11 @@ export default function FeaturedBlogPosts({ content }: { content: Post[] }) {
       </div>
 
       <div className='flex justify-end pr-4'>
-        <Link href='/blogposts/1'>
-          <a className='dark:highlight-white-5  m-2 rounded-md border border-transparent bg-brand-secondary1-70 py-1 px-2 text-sm text-brand-black shadow-md shadow-brand-main1-70 transition duration-500 ease-in-out hover:bg-brand-secondary1/50 hover:text-brand-black/70 hover:shadow-brand-main1/50 dark:bg-brand-dark-secondary1-70 '>
-            Se alle blogginnlegg ›
-          </a>
+        <Link
+          href='/blogposts/1'
+          className='dark:highlight-white-5  m-2 rounded-md border border-transparent bg-brand-secondary1-70 py-1 px-2 text-sm text-brand-black shadow-md shadow-brand-main1-70 transition duration-500 ease-in-out hover:bg-brand-secondary1/50 hover:text-brand-black/70 hover:shadow-brand-main1/50 dark:bg-brand-dark-secondary1-70 '
+        >
+          Se alle blogginnlegg ›
         </Link>
       </div>
     </Container>

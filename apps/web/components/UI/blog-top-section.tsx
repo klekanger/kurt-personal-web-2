@@ -14,7 +14,7 @@ export default function BlogTopSection({ posts }: { posts: Post[] }) {
     <div className='mt-8 md:mt-16 md:pb-8'>
       {firstPost && (
         <div className='relative pb-2 md:pb-0'>
-          <Link href={`/blog/${firstPost?.slug?.current}`} passHref>
+          <Link href={`/blog/${firstPost?.slug?.current}`} passHref legacyBehavior>
             <div className='relative aspect-[16/10]'>
               <Image
                 className='rounded-md'
@@ -33,7 +33,7 @@ export default function BlogTopSection({ posts }: { posts: Post[] }) {
           </Link>
           <div className='relative md:absolute md:bottom-0 md:left-0 md:bg-brand-black/50 md:px-6 md:py-4 md:shadow-lg md:backdrop-blur-lg '>
             <h2 className='transform cursor-pointer pb-2 text-2xl text-brand-main2 transition duration-500 hover:text-brand-secondary2 dark:text-brand-dark-main2  dark:hover:text-brand-dark-secondary1 md:font-extrabold md:text-brand-white md:hover:text-brand-secondary1 md:dark:text-brand-dark-main1 lg:text-4xl'>
-              <Link href={`/blog/${firstPost?.slug?.current}`}>
+              <Link href={`/blog/${firstPost?.slug?.current}`} legacyBehavior>
                 {firstPost?.title}
               </Link>
             </h2>

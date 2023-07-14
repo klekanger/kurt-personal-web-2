@@ -38,7 +38,6 @@ const PostKeyword: NextPage<PostKeywordProps> = ({
                 Artikler tagget med{' '}
                 <span className='text-brand-secondary2'>#{`${keyword}`}</span>
               </h1>
-
               <ArticleGrid posts={posts} />
             </div>
           )}

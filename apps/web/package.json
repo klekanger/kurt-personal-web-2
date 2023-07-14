@@ -10,9 +10,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@portabletext/react": "^1.0.6",
-    "@portabletext/types": "^1.0.3",
-    "@sanity/client": "^3.3.0",
+    "@portabletext/react": "^3.0.4 ",
+    "@portabletext/types": "^2.0.5",
+    "@sanity/client": "^6.1.7",
     "@sanity/image-url": "^1.0.1",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/typography": "^0.5.2",

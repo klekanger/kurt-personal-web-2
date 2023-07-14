@@ -61,8 +61,8 @@ export default function AboutMe({ content }: { content: AboutMeProps }) {
                 <div className='py-0 px-2 md:py-2'>
                   <SimpleText text={content?.textBlocks[1]} />
                   <br />
-                  <Link href='/about-me'>
-                    <a className='read-more'>Les mer...</a>
+                  <Link href='/about-me' className='read-more'>
+                    Les mer...
                   </Link>
                 </div>
               </div>

@@ -8,32 +8,6 @@ import DateAndAuthor from './date-and-author';
 import Hashtags from './hashtags';
 
 export default function BlogPostList({ posts }: { posts: Post[] }) {
-  /*
-  // gsap.registerPlugin(ScrollTrigger);
-  // const revealRefs = useRef([] as HTMLDivElement[]);
-  // revealRefs.current = [];
-  
- // Drop scroll effects on this page for now. We'll see if we want them later.
-
-  const addToRefs = (el: HTMLDivElement) => {
-    revealRefs.current.push(el);
-  };
-
-  useEffect(() => {
-    revealRefs.current.forEach((el, i) => {
-      gsap.from(el, {
-        y: 100,
-        scrollTrigger: {
-          id: `section-${i + 1}`,
-          trigger: el,
-          start: 'top bottom',
-          end: 'bottom bottom',
-          scrub: 1,
-        },
-      });
-    });
-  }, []); */
-
   return (
     <div className='mt-8 space-y-8'>
       {posts.map((post) => {
@@ -45,7 +19,11 @@ export default function BlogPostList({ posts }: { posts: Post[] }) {
         return (
           <div key={post._id}>
             <div className=' grid-cols-12 gap-2 pb-2 md:grid md:pb-8 lg:gap-8'>
-              <Link href={`/blog/${post?.slug?.current}`} passHref>
+              <Link
+                href={`/blog/${post?.slug?.current}`}
+                passHref
+                legacyBehavior
+              >
                 <div className=' self-top order-last cursor-pointer rounded-md md:col-span-5 lg:col-span-6'>
                   <Image
                     className='rounded-md'
@@ -65,7 +43,11 @@ export default function BlogPostList({ posts }: { posts: Post[] }) {
                 </div>
               </Link>
               <div className='md:col-span-7 md:pr-8 lg:col-span-6'>
-                <Link href={`/blog/${post?.slug?.current}`} passHref>
+                <Link
+                  href={`/blog/${post?.slug?.current}`}
+                  passHref
+                  legacyBehavior
+                >
                   <h2
                     className='m4-4 transform cursor-pointer pt-0 pb-2 text-2xl text-brand-main2 transition duration-500 hover:text-brand-secondary2 dark:text-brand-dark-main2 dark:hover:text-brand-dark-secondary2 md:mt-0 '
                     tabIndex={0}
@@ -81,9 +63,9 @@ export default function BlogPostList({ posts }: { posts: Post[] }) {
                         : ''
                     }`}
                   <Link href={`/blog/${post?.slug?.current}`}>
-                    <a className='hidden text-brand-secondary2 no-underline dark:text-brand-dark-secondary2 md:block'>
+                    <span className='cursor-pointer hidden text-brand-secondary2 no-underline dark:text-brand-dark-secondary2 md:block'>
                       Les&nbsp;mer »
-                    </a>
+                    </span>
                   </Link>
                 </p>
                 <div className='hidden space-y-2 text-gray-500 dark:text-gray-400 lg:block'>

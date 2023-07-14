@@ -132,14 +132,13 @@ export default function Navbar() {
         } top-0 z-20 pt-2`}
       >
         <div className='mx-auto flex flex-row items-center justify-between px-4 md:items-center md:px-7 lg:container'>
-          <Link href='/' passHref>
-            <a className='logo w-1/2 md:w-4/12 lg:w-2/12'>
+          <Link href='/'>
+            <div className='cursor-pointer logo w-1/2 md:w-4/12 lg:w-2/12'>
               <Image
-                className='cursor-pointer'
                 src={resolvedTheme === 'light' ? companyLogo : companyDarkLogo}
                 alt='Kurt Lekanger-logo'
               />
-            </a>
+            </div>
           </Link>
 
           <div className='md:hidden' onClick={handleMenuClick}>
@@ -152,10 +151,12 @@ export default function Navbar() {
           <nav className='hidden sm:ml-6 md:block'>
             <div className='nav-items mt-4 flex space-x-6 pb-1 align-bottom text-sm  sm:text-base md:mt-0 md:self-end lg:text-lg'>
               {navigation.map((item) => (
-                <Link passHref href={item.href} key={item.name}>
-                  <a className='link-underline dark:text-brandDark-white transform transition  duration-500 hover:text-brand-main2 dark:hover:text-gray-400'>
-                    {item.name}
-                  </a>
+                <Link
+                  href={item.href}
+                  key={item.name}
+                  className='link-underline dark:text-brandDark-white transform transition  duration-500 hover:text-brand-main2 dark:hover:text-gray-400'
+                >
+                  {item.name}
                 </Link>
               ))}
               <div
@@ -242,7 +243,7 @@ export default function Navbar() {
 
         <OutsideClickHandler onOutsideClick={() => setIsMenuOpen(false)}>
           <div
-            className={`absolute right-4 top-0 left-0 z-30 mt-0 h-screen w-11/12 transform rounded-tr-md bg-brand-main2/95 shadow-lg shadow-black backdrop-blur-xl transition duration-200 ease-in-out sm:w-3/5 md:hidden md:translate-x-0 ${
+            className={`absolute right-4 top-0 left-0 z-30 mt-0 h-screen w-11/12 transform rounded-tr-md bg-brand-main2/95 shadow-lg shadow-black backdrop-blur-xl transition duration-200 ease-in-out sm:w-3/5 md:hidden md:translate-x-0 text-brand-white ${
               isMenuOpen
                 ? 'origin-bottom-left -translate-x-36 rotate-6 '
                 : '-translate-x-full'
@@ -250,13 +251,12 @@ export default function Navbar() {
           >
             <div className='flex h-full flex-col items-center justify-center space-y-12 overflow-hidden px-2 pl-24 pb-32 text-xl font-bold sm:text-2xl'>
               {navigation.map((item) => (
-                <Link href={item.href} key={item.name}>
-                  <a
-                    className='text-brand-grey hover:text-brand-main1 '
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
+                <Link
+                  href={item.href}
+                  key={item.name}
+                  className='text-brand-grey hover:text-brand-main1 '
+                >
+                  <div onClick={() => setIsMenuOpen(false)}>{item.name}</div>
                 </Link>
               ))}
               <div className='text-center text-6xl text-brand-white'>

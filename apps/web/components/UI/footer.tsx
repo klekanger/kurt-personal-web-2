@@ -26,10 +26,12 @@ export default function Footer() {
             <div className='text-center text-xs'>
               Copyright © {new Date().getFullYear()} – Kurt Lekanger
             </div>
-            <Link href='/privacy'>
-              <a className='block pt-2 text-center text-xs hover:text-brand-linkHover dark:hover:text-brand-dark-main1'>
+            <Link
+              href='/privacy'
+              className='block pt-2 text-center text-xs hover:text-brand-linkHover dark:hover:text-brand-dark-main1'>
+              
                 Om personvern og cookies
-              </a>
+              
             </Link>
           </div>
         </div>

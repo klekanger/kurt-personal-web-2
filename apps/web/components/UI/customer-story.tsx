@@ -39,10 +39,10 @@ export default function CustomerStory({
               </div>
             </div>
             <br />
-            <Link href='/projects'>
-              <a className='read-more'>
+            <Link href='/projects' className='read-more'>
+              
                 Les mer om dette og flere prosjekter her »
-              </a>
+              
             </Link>
           </div>
           <div className='relative my-auto h-80 w-full'>

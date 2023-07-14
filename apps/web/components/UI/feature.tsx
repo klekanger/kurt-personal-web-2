@@ -18,17 +18,17 @@ export default function Feature({ content, alternativeHeading }: FeatureProps) {
           <div className='grid grid-cols-1 gap-8 pt-8 sm:pt-16 md:grid-cols-2 lg:grid-cols-4'>
             <div className='dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 transition duration-500 hover:scale-[var(--scale-min)] hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm xl:px-4'>
               <Link passHref href='/services#h7a09c45aab3a'>
-                <a>
-                  <div className='flex justify-center text-4xl'>
-                    <FaGlobe aria-hidden='true' />
-                  </div>
-                  <div className='text-center'>
-                    <SimpleText text={content.textBlocks[1]} />
-                  </div>
-                </a>
+
+                <div className='flex justify-center text-4xl'>
+                  <FaGlobe aria-hidden='true' />
+                </div>
+                <div className='text-center'>
+                  <SimpleText text={content.textBlocks[1]} />
+                </div>
+
               </Link>
             </div>
-            <Link passHref href='/services#h8dffc8bf60f0'>
+            <Link passHref href='/services#h8dffc8bf60f0' legacyBehavior>
               <div className='dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md  bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 transition duration-500 hover:scale-[var(--scale-min)] hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm xl:px-4'>
                 <a>
                   <div className='flex justify-center text-4xl'>
@@ -42,26 +42,26 @@ export default function Feature({ content, alternativeHeading }: FeatureProps) {
             </Link>
             <div className='dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 transition duration-500 hover:scale-[var(--scale-min)] hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none dark:hover:shadow-none sm:text-sm xl:px-4'>
               <Link passHref href='/services#h9fb9783ce276'>
-                <a>
-                  <div className='flex justify-center text-4xl'>
-                    <FaLanguage aria-hidden='true' />
-                  </div>
-                  <div className='text-center'>
-                    <SimpleText text={content.textBlocks[3]} />
-                  </div>
-                </a>
+
+                <div className='flex justify-center text-4xl'>
+                  <FaLanguage aria-hidden='true' />
+                </div>
+                <div className='text-center'>
+                  <SimpleText text={content.textBlocks[3]} />
+                </div>
+
               </Link>
             </div>
             <div className='dark:highlight-white-30 text-md group aspect-auto transform cursor-pointer rounded-md bg-brand-secondary1-70 py-6 px-4 shadow-lg shadow-brand-secondary1-70 transition duration-500 hover:scale-[var(--scale-min)] hover:shadow-brand-secondary1-70 dark:bg-brand-dark-secondary1-70 dark:shadow-none  dark:hover:shadow-none sm:text-sm xl:px-4'>
               <Link passHref href='/services#h501d96744adc'>
-                <a>
-                  <div className='flex justify-center text-4xl'>
-                    <FaNewspaper aria-hidden='true' />
-                  </div>
-                  <div className='text-center'>
-                    <SimpleText text={content.textBlocks[4]} />
-                  </div>
-                </a>
+
+                <div className='flex justify-center text-4xl'>
+                  <FaNewspaper aria-hidden='true' />
+                </div>
+                <div className='text-center'>
+                  <SimpleText text={content.textBlocks[4]} />
+                </div>
+
               </Link>
             </div>
           </div>
