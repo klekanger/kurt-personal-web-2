@@ -19,13 +19,13 @@ export default function Hero({ content }: HeroProps) {
             </div>
             <SimpleText text={content?.textBlocks[0]} />
 
-            <div className='flex justify-around space-x-4 py-8 sm:px-32 md:justify-start md:px-0'>
-              <Link href='/about-me' className='btn btn-primary'>
-                Om meg
+            <div className='flex justify-around space-x-4 py-8 sm:px-32 md:justify-start md:px-0 cursor-pointer'>
+              <Link href='/about-me'>
+                <div className='btn btn-primary'>Om meg</div>
               </Link>
 
-              <Link href='/projects' className='btn btn-secondary'>
-                Prosjekter
+              <Link href='/projects'>
+                <div className='btn btn-secondary'>Prosjekter</div>
               </Link>
             </div>
           </section>
