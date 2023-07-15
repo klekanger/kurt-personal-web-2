@@ -4,6 +4,11 @@
     "baseUrl": ".",
     "noEmit": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "components/content-renderers/markdown-serializers.jsx"
+  ],
   "exclude": ["node_modules"]
 }
