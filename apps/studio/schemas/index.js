@@ -10,6 +10,7 @@ import figure from './objects/figure'
 import menuElements from './menuElements'
 import projectPortableText from './objects/projectPortableText'
 import simplePortableText from './objects/simplePortableText'
+import youtube from './youtube'
 
 export const schemaTypes = [
   project, // These are the articles ("Artikler")
@@ -24,4 +25,5 @@ export const schemaTypes = [
   webContentTextBox,
   menuElements,
   author,
+  youtube,
 ]
