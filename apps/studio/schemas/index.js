@@ -11,6 +11,7 @@ import menuElements from './menuElements'
 import projectPortableText from './objects/projectPortableText'
 import simplePortableText from './objects/simplePortableText'
 import youtube from './youtube'
+import twitter from './twitter'
 
 export const schemaTypes = [
   project, // These are the articles ("Artikler")
@@ -26,4 +27,5 @@ export const schemaTypes = [
   menuElements,
   author,
   youtube,
+  twitter,
 ]

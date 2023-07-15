@@ -3,6 +3,7 @@ import Figure from './figure';
 import getYouTubeId from 'get-youtube-id';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
+import { TwitterTweetEmbed } from 'react-twitter-embed';
 
 export const serializers = {
   types: {
@@ -11,9 +12,31 @@ export const serializers = {
     youtube: (props) => {
       const { url, youtubeTitle } = props.value || {};
       const id = getYouTubeId(url);
+
+      if (!id) {
+        return (
+          <div>
+            <p>YouTube-ID mangler</p>
+          </div>
+        );
+      }
+
       return (
         <LiteYouTubeEmbed id={id} title={youtubeTitle || 'YouTube-video'} />
       );
+    },
+    twitter: (props) => {
+      const { tweetId } = props.value || {};
+
+      if (!tweetId) {
+        return (
+          <div>
+            <p>Tweet-ID mangler</p>
+          </div>
+        );
+      }
+
+      return <TwitterTweetEmbed tweetId={tweetId} />;
     },
   },
   block: (props) => {
