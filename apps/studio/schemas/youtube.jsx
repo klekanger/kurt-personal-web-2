@@ -25,6 +25,11 @@ export default {
       type: 'url',
       title: 'YouTube video URL',
     },
+    {
+      name: 'youtubeTitle',
+      type: 'string',
+      title: 'Tittel på YouTube-video',
+    },
   ],
   preview: {
     select: {

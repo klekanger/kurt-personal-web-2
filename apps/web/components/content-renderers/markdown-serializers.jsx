@@ -1,10 +1,20 @@
 import CodeBlock from './code-block';
 import Figure from './figure';
+import getYouTubeId from 'get-youtube-id';
+import LiteYouTubeEmbed from 'react-lite-youtube-embed';
+import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 
 export const serializers = {
   types: {
     figure: Figure,
     code: CodeBlock,
+    youtube: (props) => {
+      const { url, youtubeTitle } = props.value || {};
+      const id = getYouTubeId(url);
+      return (
+        <LiteYouTubeEmbed id={id} title={youtubeTitle || 'YouTube-video'} />
+      );
+    },
   },
   block: (props) => {
     const { node, children } = props;
