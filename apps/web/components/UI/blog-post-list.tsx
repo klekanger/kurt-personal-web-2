@@ -74,7 +74,7 @@ export default function BlogPostList({ posts }: { posts: Post[] }) {
                     author={post?.author?.name || null}
                   />
                   {/* Show only 5 first keywords */}
-                  <Hashtags keywords={post?.keywords.slice(0, 5)} />
+                  <Hashtags keywords={post?.keywords?.slice(0, 5)} />
                 </div>
               </div>
             </div>
