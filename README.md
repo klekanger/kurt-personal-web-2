@@ -1,6 +1,6 @@
 # Lekanger.no
 
-Nye personlige nettsider for Kurt Lekanger.
+Mine tidligere personlige nettsider. 
 
 Satt opp som monorepo ved hjelp av [Turborepo](https://turborepo.org/) fra Vercel
 
